@@ -1,4 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/kasya/workspace/vim/nerdtree_kasya'
 let g:netrw_dirhist_2='/Users/kasya/.vim/plugin'
+let g:netrw_dirhist_3='/'
+let g:netrw_dirhist_4='/Users/kasya/workspace/vim/command-t'
+let g:netrw_dirhist_5='/Users/kasya/workspace/js/node_apps/ac_dnode'
+let g:netrw_dirhist_6='/Users/kasya/workspace/js/kasimtsev.com'
