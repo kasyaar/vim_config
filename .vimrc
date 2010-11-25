@@ -68,6 +68,7 @@ let g:sparkupNextMapping = '<c-c><c-n>'
 
 "syntastic configuration
 let g:syntastic_enable_signs=1
+let b:shell = 'sh'
 
 
 "SHORTCUTS
