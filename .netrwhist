@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/kasya/workspace/vim/nerdtree_kasya'
 let g:netrw_dirhist_2='/Users/kasya/.vim/plugin'
 let g:netrw_dirhist_3='/'
@@ -7,3 +7,5 @@ let g:netrw_dirhist_4='/Users/kasya/workspace/vim/command-t'
 let g:netrw_dirhist_5='/Users/kasya/workspace/js/node_apps/ac_dnode'
 let g:netrw_dirhist_6='/Users/kasya/workspace/js/kasimtsev.com'
 let g:netrw_dirhist_7='/Users/kasya/.vim/syntax_checkers'
+let g:netrw_dirhist_8='/Users/kasya/workspace/vim/sparkup/vim'
+let g:netrw_dirhist_9='/Users/kasya/workspace/firefox/jetpack-sdk/python-lib/cuddlefish'
