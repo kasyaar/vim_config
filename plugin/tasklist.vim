@@ -366,7 +366,7 @@ command! TaskList call s:TaskList()
 
 " Default key map
 if !hasmapto('<Plug>TaskList')
-    map <unique> <Leader>tl <Plug>TaskList
+    map <unique> <Leader>l <Plug>TaskList
 endif
 
 " Key map to Command
