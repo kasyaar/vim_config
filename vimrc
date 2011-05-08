@@ -41,7 +41,7 @@ nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
 set pastetoggle=<Leader>v
 
 if has("cscope")
-  set csprg=/opt/local/bin/cscope
+  set csprg=/usr/bin/cscope
   set csto=0
   set cst
   if filereadable("cscope.out")
@@ -50,7 +50,7 @@ if has("cscope")
 endif
 
 fu! RebuildCSTags()
-    let extensions=['js','rb','py', 'vim','html', 'xml', 'xul', 'sh']
+    let extensions=['js','rb', 'php','py', 'vim','html', 'xml', 'xul', 'sh']
     "find . -type file |grep -E '\.(html|sh|js|rb|py|vim|xul|xml)$'
     let command = "find . -type f|grep -E '.*\\.(".join(extensions, '|').")$' > ./cscope.files && cscope -b"
     "echo command
