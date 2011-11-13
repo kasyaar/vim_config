@@ -82,3 +82,7 @@ let b:shell = 'sh'
 nmap <Leader>p :NERDTreeToggle<cr>
 vmap <Leader>p <esc>:NERDTreeToggle<cr>i
 imap <Leader>p <esc>:NERDTreeToggle<cr>i
+autocmd BufWritePost,FileWritePost *.coffee :silent !coffee -c <afile>
+
+"jsmin
+nmap <Leader>m :!jsmin -l 3 --overwrite %<cr>
