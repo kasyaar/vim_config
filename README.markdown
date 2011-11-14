@@ -17,3 +17,8 @@ Using git
   ln -s .vim/vimrc .vimrc
 
   ln -s .vim/gvimrc .gvimrc
+
+Post instalation actions
+-----------------------
+#install all needed for command-t plugin
+http://git.wincent.com/command-t.git/blob_plain/HEAD:/doc/command-t.txt
