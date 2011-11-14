@@ -179,6 +179,8 @@ command-t-usage	command-t.txt	/*command-t-usage*
 command-t-website	command-t.txt	/*command-t-website*
 command-t-wildignore	command-t.txt	/*command-t-wildignore*
 command-t.txt	command-t.txt	/*command-t.txt*
+cs	surround.txt	/*cs*
+ds	surround.txt	/*ds*
 g:CommandTAcceptSelectionMap	command-t.txt	/*g:CommandTAcceptSelectionMap*
 g:CommandTAcceptSelectionSplitMap	command-t.txt	/*g:CommandTAcceptSelectionSplitMap*
 g:CommandTAcceptSelectionTabMap	command-t.txt	/*g:CommandTAcceptSelectionTabMap*
@@ -217,6 +219,8 @@ g:bufExplorerSplitOutPathName	bufexplorer.txt	/*g:bufExplorerSplitOutPathName*
 g:bufExplorerSplitRight	bufexplorer.txt	/*g:bufExplorerSplitRight*
 g:snippets_dir	snipMate.txt	/*g:snippets_dir*
 g:snips_author	snipMate.txt	/*g:snips_author*
+i_CTRL-G_S	surround.txt	/*i_CTRL-G_S*
+i_CTRL-G_s	surround.txt	/*i_CTRL-G_s*
 i_CTRL-R_<Tab>	snipMate.txt	/*i_CTRL-R_<Tab>*
 list-snippets	snipMate.txt	/*list-snippets*
 multi_snip	snipMate.txt	/*multi_snip*
@@ -242,6 +246,13 @@ snipMate.txt	snipMate.txt	/*snipMate.txt*
 snippet	snipMate.txt	/*snippet*
 snippet-syntax	snipMate.txt	/*snippet-syntax*
 snippets	snipMate.txt	/*snippets*
+surround	surround.txt	/*surround*
+surround-customizing	surround.txt	/*surround-customizing*
+surround-issues	surround.txt	/*surround-issues*
+surround-mappings	surround.txt	/*surround-mappings*
+surround-replacements	surround.txt	/*surround-replacements*
+surround-targets	surround.txt	/*surround-targets*
+surround.txt	surround.txt	/*surround.txt*
 syntastic	syntastic.txt	/*syntastic*
 syntastic-about	syntastic.txt	/*syntastic-about*
 syntastic-changelog	syntastic.txt	/*syntastic-changelog*
@@ -257,3 +268,9 @@ syntastic-options	syntastic.txt	/*syntastic-options*
 syntastic-statusline-flag	syntastic.txt	/*syntastic-statusline-flag*
 syntastic-syntax-checkers	syntastic.txt	/*syntastic-syntax-checkers*
 syntastic.txt	syntastic.txt	/*syntastic.txt*
+vS	surround.txt	/*vS*
+vgS	surround.txt	/*vgS*
+yS	surround.txt	/*yS*
+ySS	surround.txt	/*ySS*
+ys	surround.txt	/*ys*
+yss	surround.txt	/*yss*
