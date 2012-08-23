@@ -22,7 +22,7 @@ endif
 set guioptions-=T
 
 " Default gui color scheme
-color eclipse
+color molokai
 
 " ConqueTerm wrapper
 function StartTerm()
