@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/kasyaar/workspace/gitolite-admin/conf'
 let g:netrw_dirhist_2='/home/kasyaar/workspace/fusion/lib/migration/doctrine'
 let g:netrw_dirhist_3='/home/kasyaar/.vim/ruby'
+let g:netrw_dirhist_4='/tmp/ebt-1.0.1.22'
+let g:netrw_dirhist_5='/home/kasyaar/workspace/rtb/icencoder'
+let g:netrw_dirhist_6='/home/kasyaar/workspace/ebt/ebt'
+let g:netrw_dirhist_7='/home/kasyaar/workspace/erlang-commons/strikead_stdlib/src'
