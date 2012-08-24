@@ -3,7 +3,7 @@ set nocompatible
 "Подсвечивать найденный фрагменты
 set hlsearch
 set nowrap
-set ts=2 sts=2 sw=2 expandtab
+set ts=4 sts=4 sw=4 expandtab
 set nu
 set bg=dark
 set foldmethod=indent
