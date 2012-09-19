@@ -78,3 +78,7 @@ nmap <Leader>p :NERDTreeToggle<cr>
 vmap <Leader>p <esc>:NERDTreeToggle<cr>i
 imap <Leader>p <esc>:NERDTreeToggle<cr>i
 
+au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
+au BufEnter *.org call org#SetOrgFileType()
+
+au BufNewFile,BufRead,BufWrite,BufWritePost ebt.config,reltool.config set ft=erlang
