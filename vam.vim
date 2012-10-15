@@ -46,21 +46,18 @@ fun! EnsureVamIsOnDisk(vam_install_path)
 
           " Tell VAM which plugins to fetch & load:
           call vam#ActivateAddons([
-          \ "github:Lokaltog/vim-powerline",
-          \ "github:tpope/vim-fugitive", 
-          \ "github:sjbach/lusty",
-          \ "github:mattn/zencoding-vim", 
-          \ "eclipse", 
-          \ "github:kasyaar/syntastic",
-          \ "bufexplorer.zip",
-          \ "github:honza/snipmate-snippets",
-          \ "github:rprimus/vim-snipmate-erlang", 
-          \ "github:scrooloose/nerdtree",
-          \ "github:scrooloose/nerdcommenter", 
-          \"calendar%52", 
-          \ "github:hsitz/VimOrganizer", 
-          \"github:chrisbra/NrrwRgn",
-          \"utl"], {'auto_install' : 0})
+          \"github:Lokaltog/vim-powerline",
+          \"github:tpope/vim-fugitive", 
+          \"github:sjbach/lusty",
+          \"github:mattn/zencoding-vim", 
+          \"eclipse", 
+          \"github:kasyaar/syntastic",
+          \"bufexplorer.zip",
+          \"github:honza/snipmate-snippets",
+          \"github:rprimus/vim-snipmate-erlang", 
+          \"github:scrooloose/nerdtree",
+          \"github:scrooloose/nerdcommenter"
+          \], {'auto_install' : 0})
           " sample: call vam#ActivateAddons(['pluginA','pluginB', ...], {'auto_install' : 0})
 
           " Addons are put into vam_install_path/plugin-name directory
