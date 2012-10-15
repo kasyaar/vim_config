@@ -1,4 +1,4 @@
-source ~/.vim/vam.cfg
+source ~/.vim/vam.vim
 
 set nocompatible 
 "Подсвечивать найденный фрагменты
