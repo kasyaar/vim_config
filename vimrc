@@ -84,4 +84,4 @@ au BufEnter *.org call org#SetOrgFileType()
 au BufNewFile,BufRead,BufWrite,BufWritePost ebt.config,reltool.config set ft=erlang
 let g:my_email_addr = "dmitry.kasimtsev@strikead.com"
 let g:snips_author = "Dmitry Kasimtsev"
-let g:syntastic_erlc_attrs='-pa /home/kasyaar/workspace/rtb/out/production/*/ebin -pa /home/kasyaar/workspace/rtb/lib/*/ebin' 
+let g:syntastic_erlc_include_path='/home/kasyaar/workspace/rtb/out/production/*/ebin /home/kasyaar/workspace/rtb/lib/*/ebin' 
