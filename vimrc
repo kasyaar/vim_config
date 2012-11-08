@@ -71,6 +71,9 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:NERDSpaceDelims = 1
+
+let vimclojure#SetupKeyMap = 0
 
 "SHORTCUTS
 "NERDTree
@@ -78,10 +81,22 @@ nmap <Leader>p :NERDTreeToggle<cr>
 vmap <Leader>p <esc>:NERDTreeToggle<cr>i
 imap <Leader>p <esc>:NERDTreeToggle<cr>i
 
+"fugitive
+"Gstatus
+nmap <Leader>gs :Gstatus<cr>
+vmap <Leader>gs <esc>:Gstatus<cr>
+imap <Leader>gs <esc>:Gstatus<cr>
+"Gcommit
+nmap <Leader>gci :Gcommit<cr>
+"Git
+nmap <Leader>g :Git 
+
+
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
 au BufEnter *.org call org#SetOrgFileType()
 
 au BufNewFile,BufRead,BufWrite,BufWritePost ebt.config,reltool.config set ft=erlang
-let g:my_email_addr = "dmitry.kasimtsev@strikead.com"
+let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
+"<dmitry.kasimtsev@strikead.com>"
 let g:snips_author = "Dmitry Kasimtsev"
 let g:syntastic_erlc_include_path='/home/kasyaar/workspace/rtb/out/production/*/ebin /home/kasyaar/workspace/rtb/lib/*/ebin' 

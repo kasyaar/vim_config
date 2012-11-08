@@ -48,8 +48,8 @@ fun! EnsureVamIsOnDisk(vam_install_path)
           call vam#ActivateAddons([
           \"github:Lokaltog/vim-powerline",
           \"github:tpope/vim-fugitive", 
-          \"github:sjbach/lusty",
           \"github:mattn/zencoding-vim", 
+          \"VimClojure",
           \"eclipse", 
           \"github:kasyaar/syntastic",
           \"bufexplorer.zip",
