@@ -49,7 +49,10 @@ if has("cscope")
     cs add cscope.out
   endif
 endif
-
+fu! RequildCTags()
+    let command "ctags -R"
+    let out = system(command)
+endf
 fu! RebuildCSTags()
     let extensions=['js','rb', 'php','py', 'vim','html', 'xml', 'xul', 'sh', 'erl', 'hrl']
     "find . -type file |grep -E '\.(html|sh|js|rb|py|vim|xul|xml|erl|hrl)$'
@@ -61,6 +64,7 @@ endf
 
 
 nmap <Leader>r :call RebuildCSTags()<cr>
+nmap <Leader>rc :call RebuildCTags()<cr>
 set bs=2
 set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif 
