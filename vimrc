@@ -38,6 +38,12 @@ filetype plugin on
 
 set autoread
 
+inoremap () ()<Left>
+inoremap [] []<Left>
+inoremap {} {}<Left>
+inoremap "" ""<Left>
+inoremap '' ''<Left>
+
 nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
 set pastetoggle=<Leader>v
 
