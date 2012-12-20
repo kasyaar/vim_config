@@ -57,6 +57,7 @@ fun! EnsureVamIsOnDisk(vam_install_path)
           \"github:rprimus/vim-snipmate-erlang", 
           \"github:scrooloose/nerdtree",
           \"github:scrooloose/nerdcommenter",
+          \"github:jdevera/vim-protobuf-syntax",
           \"github:oscarh/vimerl"
           \], {'auto_install' : 0})
           " sample: call vam#ActivateAddons(['pluginA','pluginB', ...], {'auto_install' : 0})
