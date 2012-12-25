@@ -55,8 +55,8 @@ if has("cscope")
     cs add cscope.out
   endif
 endif
-fu! RequildCTags()
-    let command "ctags -R"
+fu! RebuildCTags()
+    let command = "ctags -R"
     let out = system(command)
 endf
 fu! RebuildCSTags()
