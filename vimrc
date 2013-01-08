@@ -67,7 +67,17 @@ fu! RebuildCSTags()
     let out = system(command)
     cs reset
 endf
+" Duration of a pomodoro in minutes (default: 25)
+let g:pomodoro_time_work = 25
 
+" Duration of a break in minutes (default: 5)
+let g:pomodoro_time_slack = 5 
+
+" Log completed pomodoros, 0 = False, 1 = True (default: 0)
+let g:pomodoro_do_log = 1 
+
+" Path to the pomodoro log file (default: /tmp/pomodoro.log)
+let g:pomodoro_log_file = "/tmp/pomodoro.log" 
 
 nmap <Leader>r :call RebuildCSTags()<cr>
 nmap <Leader>rc :call RebuildCTags()<cr>
@@ -79,6 +89,7 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=[%{PomodoroStatus()}]
 set statusline+=%*
 
 let g:NERDSpaceDelims = 1
@@ -107,6 +118,5 @@ au BufEnter *.org call org#SetOrgFileType()
 
 au BufNewFile,BufRead,BufWrite,BufWritePost ebt.config,reltool.config set ft=erlang
 let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
-"<dmitry.kasimtsev@strikead.com>"
 let g:snips_author = "Dmitry Kasimtsev"
 let g:syntastic_erlc_include_path='/home/kasyaar/workspace/rtb/out/production/*/ebin /home/kasyaar/workspace/rtb/lib/*/ebin' 

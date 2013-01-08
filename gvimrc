@@ -116,7 +116,7 @@ call s:DefineCommand("cd", "ChangeDirectory")
 call s:DefineCommand("touch", "Touch")
 call s:DefineCommand("rm", "Remove")
 call s:DefineCommand("e", "Edit")
-new
+" new
 
 " Include user's local vim config
 if filereadable(expand("~/.gvimrc.local"))

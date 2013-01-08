@@ -46,7 +46,8 @@ fun! EnsureVamIsOnDisk(vam_install_path)
 
           " Tell VAM which plugins to fetch & load:
           call vam#ActivateAddons([
-          \"github:Lokaltog/vim-powerline",
+          \"github:pydave/AsyncCommand",
+          \"github:mnick/vim-pomodoro",
           \"github:tpope/vim-fugitive", 
           \"github:mattn/zencoding-vim", 
           \"VimClojure",
