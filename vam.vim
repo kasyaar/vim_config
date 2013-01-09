@@ -54,6 +54,7 @@ fun! EnsureVamIsOnDisk(vam_install_path)
           \"eclipse", 
           \"github:kasyaar/syntastic",
           \"bufexplorer.zip",
+          \"github:garbas/vim-snipmate",
           \"github:honza/snipmate-snippets",
           \"github:rprimus/vim-snipmate-erlang", 
           \"github:scrooloose/nerdtree",
