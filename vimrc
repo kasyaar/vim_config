@@ -115,7 +115,12 @@ nmap <Leader>g :Git
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
 au BufEnter *.org call org#SetOrgFileType()
 
+fu! SetAuthorMode()
+    set tw=120
+endf
 au BufNewFile,BufRead,BufWrite,BufWritePost ebt.config,reltool.config set ft=erlang
+au BufNewFile,BufRead,BufWrite,BufWritePost *.txt call SetAuthorMode()
+
 let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
 let g:snips_author = "Dmitry Kasimtsev"
 let g:syntastic_erlc_include_path='/home/kasyaar/workspace/rtb/out/production/*/ebin /home/kasyaar/workspace/rtb/lib/*/ebin' 
