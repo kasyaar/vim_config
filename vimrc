@@ -119,6 +119,7 @@ fu! SetAuthorMode()
     set tw=120
 endf
 au BufNewFile,BufRead,BufWrite,BufWritePost ebt.config,reltool.config set ft=erlang
+au BufNewFile,BufRead,BufWrite,BufWritePost *.cljs set ft=clojure
 au BufNewFile,BufRead,BufWrite,BufWritePost *.txt call SetAuthorMode()
 
 let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"

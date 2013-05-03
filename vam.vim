@@ -53,6 +53,7 @@ fun! EnsureVamIsOnDisk(vam_install_path)
           \"github:kasyaar/syntastic",
           \"bufexplorer.zip",
           \"github:garbas/vim-snipmate",
+          \"github:honza/vim-snippets",
           \"github:rprimus/vim-snipmate-erlang", 
           \"github:scrooloose/nerdtree",
           \"github:scrooloose/nerdcommenter",
