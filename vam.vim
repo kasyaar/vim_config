@@ -51,6 +51,7 @@ fun! EnsureVamIsOnDisk(vam_install_path)
           \"VimClojure",
           \"eclipse", 
           \"github:kasyaar/syntastic",
+          \"FuzzyFinder",
           \"bufexplorer.zip",
           \"github:garbas/vim-snipmate",
           \"github:honza/vim-snippets",

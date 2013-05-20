@@ -111,6 +111,10 @@ nmap <Leader>gci :Gcommit<cr>
 "Git
 nmap <Leader>g :Git 
 
+nmap <Leader>f :FufTaggedFile<cr>
+nmap <Leader>fr :FufTaggedFile <c-r>=expand("<cword>")<cr><cr>
+
+" nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
 
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
 au BufEnter *.org call org#SetOrgFileType()
