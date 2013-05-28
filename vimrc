@@ -111,8 +111,13 @@ nmap <Leader>gci :Gcommit<cr>
 "Git
 nmap <Leader>g :Git 
 
+"Fuzzy finder
 nmap <Leader>f :FufTaggedFile<cr>
 nmap <Leader>fr :FufTaggedFile <c-r>=expand("<cword>")<cr><cr>
+
+"cscope
+nmap <c-f>c :cs find c <cword><cr>
+nmap <c-f>e :cs find e <cword><cr>
 
 " nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
 
