@@ -130,6 +130,8 @@ endf
 au BufNewFile,BufRead,BufWrite,BufWritePost ebt.config,reltool.config set ft=erlang
 au BufNewFile,BufRead,BufWrite,BufWritePost *.cljs set ft=clojure
 au BufNewFile,BufRead,BufWrite,BufWritePost *.txt call SetAuthorMode()
+au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
+au BufEnter *.org call org#SetOrgFileType()
 
 let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
 let g:snips_author = "Dmitry Kasimtsev"
