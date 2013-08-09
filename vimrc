@@ -141,3 +141,21 @@ let g:snips_author = "Dmitry Kasimtsev"
 let g:syntastic_erlc_include_path='/home/kasyaar/workspace/rtb/out/production/*/ebin /home/kasyaar/workspace/rtb/lib/*/ebin' 
 let g:calendar_monday = 1
 
+let g:rbpt_colorpairs = [
+    \ ['brown',       'LightGreen'],
+    \ ['Darkblue',    'orange'],
+    \ ['darkgray',    'cyan1'],
+    \ ['darkgreen',   'HotPink'],
+    \ ['darkcyan',    'LightGreen'],
+    \ ['darkred',     'orange'],
+    \ ['darkmagenta', 'cyan1'],
+    \ ['brown',       'HotPink'],
+    \ ['gray',        'LightGreen'],
+    \ ['black',       'orange'],
+    \ ['darkmagenta', 'cyan1'],
+    \ ['Darkblue',    'HotPink'],
+    \ ['darkgreen',   'LightGreen'],
+    \ ['darkcyan',    'orange'],
+    \ ['darkred',     'cyan1'],
+    \ ['red',         'HotPink'],
+    \ ]
