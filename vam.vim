@@ -47,7 +47,7 @@ fun! EnsureVamIsOnDisk(vam_install_path)
           " Tell VAM which plugins to fetch & load:
           call vam#ActivateAddons([
           \"github:tpope/vim-fugitive", 
-          \"github:mattn/zencoding-vim", 
+          \"github:mattn/emmet-vim", 
           \"VimClojure",
           \"eclipse", 
           \"github:kasyaar/syntastic",
