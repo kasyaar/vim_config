@@ -48,6 +48,8 @@ fun! EnsureVamIsOnDisk(vam_install_path)
           call vam#ActivateAddons([
           \"github:tpope/vim-fugitive", 
           \"github:mattn/emmet-vim", 
+          \"github:tpope/vim-classpath",
+          \"github:tpope/vim-fireplace",
           \"github:guns/vim-clojure-static",
           \"github:kien/rainbow_parentheses.vim",
           \"eclipse", 
