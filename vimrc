@@ -128,13 +128,14 @@ fu! SetAuthorMode()
     set tw=120
 endf
 au BufNewFile,BufRead,BufWrite,BufWritePost ebt.config,reltool.config set ft=erlang
-au BufNewFile,BufRead,BufWrite,BufWritePost *.cljs set ft=clojure
 au BufNewFile,BufRead,BufWrite,BufWritePost *.txt call SetAuthorMode()
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
 au BufEnter *.org call org#SetOrgFileType()
 
+au BufNewFile,BufRead,BufWrite,BufWritePost *.cljs set ft=clojure
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+
 let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
 let g:snips_author = "Dmitry Kasimtsev"
 let g:syntastic_erlc_include_path='/home/kasyaar/workspace/rtb/out/production/*/ebin /home/kasyaar/workspace/rtb/lib/*/ebin' 
-let g:vimclojure#ParenRainbow = 1
-let g:vimclojure#DynamicHighlighting = 1
