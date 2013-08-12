@@ -56,29 +56,17 @@ if has("cscope")
   endif
 endif
 fu! RebuildCTags()
-    let command = "ctags -R"
+    let command = "ctags --langmap=Lisp:.clj.cljs -R"
     let out = system(command)
 endf
 fu! RebuildCSTags()
-    let extensions=['js','rb', 'php','py', 'vim','html', 'xml', 'xul', 'sh', 'erl', 'hrl']
+    let extensions=['clj', 'js','rb', 'php','py', 'vim','html', 'xml', 'xul', 'sh', 'erl', 'hrl']
     "find . -type file |grep -E '\.(html|sh|js|rb|py|vim|xul|xml|erl|hrl)$'
     let command = "find . -type f|grep -E '.*\\.(".join(extensions, '|').")$' > ./cscope.files && cscope -b"
     "echo command
     let out = system(command)
     cs reset
 endf
-" Duration of a pomodoro in minutes (default: 25)
-let g:pomodoro_time_work = 25
-
-" Duration of a break in minutes (default: 5)
-let g:pomodoro_time_slack = 5 
-
-" Log completed pomodoros, 0 = False, 1 = True (default: 0)
-let g:pomodoro_do_log = 1 
-
-" Path to the pomodoro log file (default: /tmp/pomodoro.log)
-let g:pomodoro_log_file = "/tmp/pomodoro.log" 
-
 nmap <Leader>r :call RebuildCSTags()<cr>
 nmap <Leader>rc :call RebuildCTags()<cr>
 set bs=2
@@ -119,6 +107,9 @@ nmap <Leader>fr :FufTaggedFile <c-r>=expand("<cword>")<cr><cr>
 nmap <c-f>c :cs find c <cword><cr>
 nmap <c-f>e :cs find e <cword><cr>
 
+"rainbow paren
+nmap <Leader>rp :RainbowParenthesesToggleAll<cr>
+
 " nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
 
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
@@ -127,14 +118,15 @@ au BufEnter *.org call org#SetOrgFileType()
 fu! SetAuthorMode()
     set tw=120
 endf
-au BufNewFile,BufRead,BufWrite,BufWritePost ebt.config,reltool.config set ft=erlang
+au BufNewFile,BufRead,BufWrite,BufWritePost ebt.config,*.bind,reltool.config set ft=erlang
 au BufNewFile,BufRead,BufWrite,BufWritePost *.txt call SetAuthorMode()
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
 au BufEnter *.org call org#SetOrgFileType()
 
 au BufNewFile,BufRead,BufWrite,BufWritePost *.cljs set ft=clojure
-au VimEnter * RainbowParenthesesToggle
+" au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadBraces
 
 let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
 let g:snips_author = "Dmitry Kasimtsev"
