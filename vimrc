@@ -113,7 +113,25 @@ nmap <c-f>f :/<c-r>=expand("<cword>")<cr><cr>
 "rainbow paren
 nmap <Leader>rp :RainbowParenthesesToggleAll<cr>
 
-" nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
+nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
+"
+" vimux
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+
+" Inspect runner pane
+map <Leader>vi :VimuxInspectRunner<CR>
+map <Leader>vu :VimuxScrollUpInspect<CR>
+map <Leader>vd :VimuxScrollDownInspect<CR>
+
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>vq :VimuxCloseRunner<CR>
+
+" Interrupt any command running in the runner pane
+map <Leader>vx :VimuxInterruptRunner<CR>
 
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
 au BufEnter *.org call org#SetOrgFileType()
@@ -130,6 +148,11 @@ au BufNewFile,BufRead,BufWrite,BufWritePost *.cljs set ft=clojure
 " au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadBraces
+
+"vimux
+let g:VimuxHeight = "40"
+let g:VimuxPromptString = ">> "
+
 
 let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
 let g:snips_author = "Dmitry Kasimtsev"
