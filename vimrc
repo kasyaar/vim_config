@@ -107,6 +107,9 @@ nmap <Leader>fr :FufTaggedFile <c-r>=expand("<cword>")<cr><cr>
 nmap <c-f>c :cs find c <cword><cr>
 nmap <c-f>e :cs find e <cword><cr>
 
+"search current word in whole doc
+nmap <c-f>f :/<c-r>=expand("<cword>")<cr><cr>
+
 "rainbow paren
 nmap <Leader>rp :RainbowParenthesesToggleAll<cr>
 

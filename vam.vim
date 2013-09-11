@@ -66,7 +66,8 @@ fun! EnsureVamIsOnDisk(vam_install_path)
           \"github:hsitz/VimOrganizer",
           \"github:mattn/calendar-vim",
           \"github:chrisbra/NrrwRgn",
-          \"utl"
+          \"utl",
+          \"github:benmills/vimux"
           \], {'auto_install' : 0})
           " sample: call vam#ActivateAddons(['pluginA','pluginB', ...], {'auto_install' : 0})
 
