@@ -148,6 +148,8 @@ au BufNewFile,BufRead,BufWrite,BufWritePost *.cljs set ft=clojure
 " au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadBraces
+"NERD
+let NERD_erlang_alt_style=1
 
 "vimux
 let g:VimuxHeight = "40"
@@ -177,3 +179,7 @@ let g:rbpt_colorpairs = [
     \ ['darkred',     'cyan1'],
     \ ['red',         'HotPink'],
     \ ]
+
+let g:NERDCustomDelimiters = {
+    \'erlang': { 'leftAlt': '% ','rightAlt': '', 'left': '%% ', 'right': '' },
+\}
