@@ -5,9 +5,7 @@ set nocompatible
 set hlsearch
 set nowrap
 set ts=4 sts=4 sw=4 expandtab
-set nu
-"set bg=dark
-set foldmethod=indent
+set nu "set bg=dark set foldmethod=indent
 set autoindent
 set smartindent
 " Не выгружать буферы при переключении

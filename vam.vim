@@ -49,7 +49,6 @@ fun! EnsureVamIsOnDisk(vam_install_path)
           \"github:tpope/vim-fugitive", 
           \"github:mattn/emmet-vim", 
           \"github:tpope/vim-classpath",
-          \"github:tpope/vim-fireplace",
           \"github:guns/vim-clojure-static",
           \"github:kien/rainbow_parentheses.vim",
           \"eclipse", 
@@ -62,12 +61,7 @@ fun! EnsureVamIsOnDisk(vam_install_path)
           \"github:scrooloose/nerdtree",
           \"github:scrooloose/nerdcommenter",
           \"github:jdevera/vim-protobuf-syntax",
-          \"github:oscarh/vimerl",
-          \"github:hsitz/VimOrganizer",
-          \"github:mattn/calendar-vim",
-          \"github:chrisbra/NrrwRgn",
-          \"utl",
-          \"github:benmills/vimux"
+          \"github:oscarh/vimerl"
           \], {'auto_install' : 0})
           " sample: call vam#ActivateAddons(['pluginA','pluginB', ...], {'auto_install' : 0})
 
