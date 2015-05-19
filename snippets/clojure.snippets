@@ -1,2 +1,40 @@
 snippet cmb
 	(${1:name} ${2:args})
+snippet omc
+	(defn ${1:name}-view [${2:app} ${3:owner}] 
+		(reify
+			${0}))
+snippet with
+	(with-${1:open}
+		${0})
+#om snippets
+snippet omroot
+	(om/root ${1:name}-view ${2:app-state}
+		{:target (. js/document (getElementById "${3:$1}"))})
+
+snippet omr
+	om/I${1:Render}
+	(${2:render} [${3:this}]
+		${0})
+
+snippet omis
+	om/I${1:InitState}
+	(${2:init-state} [${3:app} ${4:state}]
+		${0})
+
+snippet omrs
+	om/I${1:RenderState}
+	(${2:render-state} [${3:app} ${4:state}]
+		${0})
+
+snippet dom
+	(dom/${1:elem} ${2:nil} ${3:value})
+
+snippet #js
+	#js {${1::onClick} ${0}}
+	
+snippet log
+	(. js/document (log ${0}))
+
+snippet str
+	(str ${0})

@@ -101,6 +101,7 @@ nmap <Leader>g :Git
 
 "Fuzzy finder
 nmap <Leader>f :FufTaggedFile<cr>
+nmap <Leader>fc :FufCoverageFile<cr>
 nmap <Leader>fr :FufTaggedFile <c-r>=expand("<cword>")<cr><cr>
 
 "cscope
@@ -113,23 +114,49 @@ nmap <c-f>f :/<c-r>=expand("<cword>")<cr><cr>
 "rainbow paren
 nmap <Leader>rp :RainbowParenthesesToggleAll<cr>
 
-" nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
+nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
+"
+" vimux
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
 
-au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
-au BufEnter *.org call org#SetOrgFileType()
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+
+" Inspect runner pane
+map <Leader>vi :VimuxInspectRunner<CR>
+map <Leader>vu :VimuxScrollUpInspect<CR>
+map <Leader>vd :VimuxScrollDownInspect<CR>
+
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>vq :VimuxCloseRunner<CR>
+
+" Interrupt any command running in the runner pane
+map <Leader>vx :VimuxInterruptRunner<CR>
+
 
 fu! SetAuthorMode()
-    set tw=120
+    set tw=80
 endf
-au BufNewFile,BufRead,BufWrite,BufWritePost ebt.config,*.bind,reltool.config set ft=erlang
+
+au BufNewFile,BufRead,BufWrite,BufWritePost todo set ft=todo
+
+ia td <C-R>=strftime("%d-%m-%y")<CR>
+ia tm <C-R>=strftime("%d-%m-%y", localtime() + 24*60*60)<CR>
+ia yd <C-R>=strftime("%d-%m-%y", localtime() - 24*60*60)<CR>
+
+
 au BufNewFile,BufRead,BufWrite,BufWritePost *.txt call SetAuthorMode()
-au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
-au BufEnter *.org call org#SetOrgFileType()
 
 au BufNewFile,BufRead,BufWrite,BufWritePost *.cljs set ft=clojure
 " au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadBraces
+
+"vimux
+let g:VimuxHeight = "40"
+let g:VimuxPromptString = ">> "
+
 
 let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
 let g:snips_author = "Dmitry Kasimtsev"
