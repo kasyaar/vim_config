@@ -8,6 +8,7 @@ set ts=4 sts=4 sw=4 expandtab
 set nu "set bg=dark set foldmethod=indent
 set autoindent
 set smartindent
+set bg=dark
 " Не выгружать буферы при переключении
 set hidden
 syntax on
