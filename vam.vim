@@ -1,89 +1,53 @@
-fun! EnsureVamIsOnDisk(vam_install_path)
-          " windows users may want to use http://mawercer.de/~marc/vam/index.php
-          " to fetch VAM, VAM-known-repositories and the listed plugins
-          " without having to install curl, 7-zip and git tools first
-          " -> BUG [4] (git-less installation)
-          let is_installed_c = "isdirectory(a:vam_install_path.'/vim-addon-manager/autoload')"
-          if eval(is_installed_c)
-            return 1
-          else
-            if 1 == confirm("Clone VAM into ".a:vam_install_path."?","&Y\n&N")
-              " I'm sorry having to add this reminder. Eventually it'll pay off.
-              call confirm("Remind yourself that most plugins ship with ".
-                          \"documentation (README*, doc/*.txt). It is your ".
-                          \"first source of knowledge. If you can't find ".
-                          \"the info you're looking for in reasonable ".
-                          \"time ask maintainers to improve documentation")
-              call mkdir(a:vam_install_path, 'p')
-              execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '.shellescape(a:vam_install_path, 1).'/vim-addon-manager'
-              " VAM runs helptags automatically when you install or update 
-              " plugins
-              exec 'helptags '.fnameescape(a:vam_install_path.'/vim-addon-manager/doc')
-            endif
-            return eval(is_installed_c)
-          endif
-        endf
+fun! SetupVAM()
+  let c = get(g:, 'vim_addon_manager', {})
+  let g:vim_addon_manager = c
+  let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
 
-        fun! SetupVAM()
-          " Set advanced options like this:
-          " let g:vim_addon_manager = {}
-          " let g:vim_addon_manager['key'] = value
+  " Force your ~/.vim/after directory to be last in &rtp always:
+  " let g:vim_addon_manager.rtp_list_hook = 'vam#ForceUsersAfterDirectoriesToBeLast'
 
-          " Example: drop git sources unless git is in PATH. Same plugins can
-          " be installed from www.vim.org. Lookup MergeSources to get more control
-          " let g:vim_addon_manager['drop_git_sources'] = !executable('git')
-          " let g:vim_addon_manager.debug_activation = 1
+  " most used options you may want to use:
+  " let c.log_to_buf = 1
+  " let c.auto_install = 0
+  let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
+  if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
+    execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
+        \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
+  endif
 
-          " VAM install location:
-          let vam_install_path = expand('$HOME') . '/.vim/vim-addons'
-          if !EnsureVamIsOnDisk(vam_install_path)
-            echohl ErrorMsg
-            echomsg "No VAM found!"
-            echohl NONE
-            return
-          endif
-          exec 'set runtimepath+='.vam_install_path.'/vim-addon-manager'
+  " This provides the VAMActivate command, you could be passing plugin names, too
+  call vam#ActivateAddons([], {})
+endfun
+call SetupVAM()
 
-          " Tell VAM which plugins to fetch & load:
-          call vam#ActivateAddons([
-          \"github:tpope/vim-fugitive",
-          \"github:mattn/emmet-vim", 
-          \"github:tpope/vim-classpath",
-          \"github:guns/vim-clojure-static",
-          \"github:kien/rainbow_parentheses.vim",
-          \"eclipse", 
-          \"github:kasyaar/syntastic",
-          \"FuzzyFinder",
-          \"bufexplorer.zip",
-          \"github:garbas/vim-snipmate",
-          \"github:honza/vim-snippets",
-          \"github:rprimus/vim-snipmate-erlang", 
-          \"github:scrooloose/nerdtree",
-          \"github:scrooloose/nerdcommenter",
-          \"github:jdevera/vim-protobuf-syntax",
-          \"github:jeroenbourgois/vim-actionscript",
-          \"github:oscarh/vimerl"
-          \], {'auto_install' : 0})
-          " sample: call vam#ActivateAddons(['pluginA','pluginB', ...], {'auto_install' : 0})
+" ACTIVATING PLUGINS
 
-          " Addons are put into vam_install_path/plugin-name directory
-          " unless those directories exist. Then they are activated.
-          " Activating means adding addon dirs to rtp and do some additional
-          " magic
+" OPTION 1, use VAMActivate
+"VAMActivate PLUGIN_NAME PLUGIN_NAME ..
 
-          " How to find addon names?
-          " - look up source from pool
-          " - (<c-x><c-p> complete plugin names):
-          " You can use name rewritings to point to sources:
-          "    ..ActivateAddons(["github:foo", .. => github://foo/vim-addon-foo
-          "    ..ActivateAddons(["github:user/repo", .. => github://user/repo
-          " Also see section "2.2. names of addons and addon sources" in VAM's documentation
-        endfun
-        call SetupVAM()
-        " experimental [E1]: load plugins lazily depending on filetype, See
-        " NOTES
-        " experimental [E2]: run after gui has been started (gvim) [3]
-        " option1:  au VimEnter * call SetupVAM()
-        " option2:  au GUIEnter * call SetupVAM()
-        " See BUGS sections below [*]
-        " Vim 7.0 users see BUGS section [3]
+" OPTION 2: use call vam#ActivateAddons
+"call vam#ActivateAddons([PLUGIN_NAME], {})
+call vam#ActivateAddons([ 
+            \"github:tpope/vim-fugitive",
+            \"github:mattn/emmet-vim", 
+            \"github:tpope/vim-classpath",
+            \"github:guns/vim-clojure-static",
+            \"github:kien/rainbow_parentheses.vim",
+            \"eclipse", 
+            \"github:kasyaar/syntastic",
+            \"FuzzyFinder",
+            \"bufexplorer.zip",
+            \"github:garbas/vim-snipmate",
+            \"github:honza/vim-snippets",
+            \"github:rprimus/vim-snipmate-erlang", 
+            \"github:scrooloose/nerdtree",
+            \"github:scrooloose/nerdcommenter",
+            \"github:jdevera/vim-protobuf-syntax",
+            \"github:jeroenbourgois/vim-actionscript",
+            \"github:oscarh/vimerl"
+            \], {'auto_install' : 0})
+" use <c-x><c-p> to complete plugin names
+
+" OPTION 3: Create a file ~/.vim-srcipts putting a PLUGIN_NAME into each line
+" See lazy loading plugins section in README.md for details
+"call vam#Scripts('~/.vim-scripts', {'tag_regex': '.*'})
