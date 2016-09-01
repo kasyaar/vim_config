@@ -28,6 +28,11 @@ call SetupVAM()
 " OPTION 2: use call vam#ActivateAddons
 "call vam#ActivateAddons([PLUGIN_NAME], {})
 call vam#ActivateAddons([ 
+            \"neosnippet",
+            \"neosnippet-snippets",
+            \"github:Shougo/neocomplete.vim",
+            \"github:wting/rust.vim",
+            \"github:jtratner/vim-flavored-markdown",
             \"github:tpope/vim-fugitive",
             \"github:mattn/emmet-vim", 
             \"github:tpope/vim-classpath",

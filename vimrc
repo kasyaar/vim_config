@@ -1,5 +1,6 @@
 source ~/.vim/vam.vim
 
+
 set nocompatible 
 "Подсвечивать найденный фрагменты
 set hlsearch
@@ -93,6 +94,10 @@ imap <Leader>p <esc>:NERDTreeToggle<cr>i
 nmap <Leader>gs :Gstatus<cr>
 vmap <Leader>gs <esc>:Gstatus<cr>
 imap <Leader>gs <esc>:Gstatus<cr>
+"Gpush
+nmap <Leader>gp :Git push<cr>
+vmap <Leader>gp <esc>:Git push<cr>
+imap <Leader>gp <esc>:Git push<cr>
 "Gcommit
 nmap <Leader>gci :Gcommit<cr>
 "Git
@@ -106,6 +111,10 @@ nmap <Leader>fr :FufTaggedFile <c-r>=expand("<cword>")<cr><cr>
 "cscope
 nmap <c-f>c :cs find c <cword><cr>
 nmap <c-f>e :cs find e <cword><cr>
+
+"grip
+nmap <c-g>b :!grip --gfm --wide -b '%:p'<cr>
+nmap <c-g>e :!grip --gfm --wide --export '%:p'<cr>
 
 "search current word in whole doc
 nmap <c-f>f :/<c-r>=expand("<cword>")<cr><cr>
@@ -138,6 +147,10 @@ fu! SetAuthorMode()
     set tw=80
 endf
 
+fu! SetMarkdownMode()
+    set tw=0
+endf
+
 au BufNewFile,BufRead,BufWrite,BufWritePost todo set ft=todo
 
 ia td <C-R>=strftime("%d-%m-%y")<CR>
@@ -146,6 +159,7 @@ ia yd <C-R>=strftime("%d-%m-%y", localtime() - 24*60*60)<CR>
 
 
 au BufNewFile,BufRead,BufWrite,BufWritePost *.txt call SetAuthorMode()
+au BufNewFile,BufRead,BufWrite,BufWritePost *.md call SetMarkdownMode()
 
 au BufNewFile,BufRead,BufWrite,BufWritePost *.cljs set ft=clojure
 " au VimEnter * RainbowParenthesesToggle
@@ -168,6 +182,7 @@ let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
 let g:snips_author = "Dmitry Kasimtsev"
 let g:syntastic_erlc_include_path='/home/kasyaar/workspace/rtb/out/production/*/ebin /home/kasyaar/workspace/rtb/lib/*/ebin' 
 let g:calendar_monday = 1
+let g:neocomplete#enable_at_startup = 1
 
 let g:rbpt_colorpairs = [
     \ ['brown',       'LightGreen'],
@@ -191,3 +206,21 @@ let g:rbpt_colorpairs = [
 let g:NERDCustomDelimiters = {
     \'erlang': { 'leftAlt': '% ','rightAlt': '', 'left': '%% ', 'right': '' },
 \}
+
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
