@@ -22,6 +22,7 @@ set fileencodings=utf8,cp1251
 set encoding=utf8
 set incsearch
 set vb t_vb= 
+
 " Mouse support
 set mouse=a
 set mousemodel=popup
@@ -29,7 +30,7 @@ set mousemodel=popup
 " swp folder
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
-" Опции сесссий
+" session options
 set sessionoptions=curdir,buffers,tabpages
 " show completion menu for only one founded completion
 set cot+=menuone
@@ -88,7 +89,6 @@ set statusline+=%*
 
 let g:NERDSpaceDelims = 1
 
-let vimclojure#SetupKeyMap = 0
 
 "SHORTCUTS
 "NERDTree
@@ -110,11 +110,6 @@ nmap <Leader>gci :Gcommit<cr>
 "Git
 nmap <Leader>g :Git 
 
-"Fuzzy finder
-nmap <Leader>f :FufTaggedFile<cr>
-nmap <Leader>fc :FufCoverageFile<cr>
-nmap <Leader>fr :FufTaggedFile <c-r>=expand("<cword>")<cr><cr>
-
 "cscope
 nmap <c-f>c :cs find c <cword><cr>
 nmap <c-f>e :cs find e <cword><cr>
@@ -126,28 +121,10 @@ nmap <c-g>e :!grip --gfm --wide --export '%:p'<cr>
 "search current word in whole doc
 nmap <c-f>f :/<c-r>=expand("<cword>")<cr><cr>
 
-"rainbow paren
-"nmap <Leader>rp :RainbowParenthesesToggleAll<cr>
+"rainbow parentheses
+nmap <Leader>rp :RainbowParenthesesToggleAll<cr>
 
 nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
-"
-" vimux
-" Prompt for a command to run
-map <Leader>vp :VimuxPromptCommand<CR>
-
-" Run last command executed by VimuxRunCommand
-map <Leader>vl :VimuxRunLastCommand<CR>
-
-" Inspect runner pane
-map <Leader>vi :VimuxInspectRunner<CR>
-map <Leader>vu :VimuxScrollUpInspect<CR>
-map <Leader>vd :VimuxScrollDownInspect<CR>
-
-" Close vim tmux runner opened by VimuxRunCommand
-map <Leader>vq :VimuxCloseRunner<CR>
-
-" Interrupt any command running in the runner pane
-map <Leader>vx :VimuxInterruptRunner<CR>
 
 
 fu! SetAuthorMode()
@@ -158,8 +135,6 @@ fu! SetMarkdownMode()
     set tw=0
 endf
 
-au BufNewFile,BufRead,BufWrite,BufWritePost todo set ft=todo
-
 ia td <C-R>=strftime("%d-%m-%y")<CR>
 ia tm <C-R>=strftime("%d-%m-%y", localtime() + 24*60*60)<CR>
 ia yd <C-R>=strftime("%d-%m-%y", localtime() - 24*60*60)<CR>
@@ -168,28 +143,15 @@ ia yd <C-R>=strftime("%d-%m-%y", localtime() - 24*60*60)<CR>
 au BufNewFile,BufRead,BufWrite,BufWritePost *.txt call SetAuthorMode()
 au BufNewFile,BufRead,BufWrite,BufWritePost *.md call SetMarkdownMode()
 
-au BufNewFile,BufRead,BufWrite,BufWritePost *.cljs set ft=clojure
-" au VimEnter * RainbowParenthesesToggle
-"au Syntax * RainbowParenthesesLoadRound
-"au Syntax * RainbowParenthesesLoadBraces
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadBraces
 "NERD
 let NERD_erlang_alt_style=1
-
-"vimux
-let g:VimuxHeight = "40"
-let g:VimuxPromptString = ">> "
-
-
-"vimux
-let g:VimuxHeight = "40"
-let g:VimuxPromptString = ">> "
 
 
 let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
 let g:snips_author = "Dmitry Kasimtsev"
-let g:syntastic_erlc_include_path='/home/kasyaar/workspace/rtb/out/production/*/ebin /home/kasyaar/workspace/rtb/lib/*/ebin' 
-let g:calendar_monday = 1
-let g:neocomplete#enable_at_startup = 1
 
 let g:rbpt_colorpairs = [
     \ ['brown',       'LightGreen'],
@@ -210,24 +172,8 @@ let g:rbpt_colorpairs = [
     \ ['red',         'HotPink'],
     \ ]
 
-let g:NERDCustomDelimiters = {
-    \'erlang': { 'leftAlt': '% ','rightAlt': '', 'left': '%% ', 'right': '' },
-\}
-
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
 " For conceal markers.
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+let g:UltiSnipsListSnippets="<c-l>"
