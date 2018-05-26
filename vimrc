@@ -1,4 +1,4 @@
-source ~/.vim/vam.vim
+source ~/.vim/plug.vim
 
 
 set nocompatible 
@@ -47,6 +47,8 @@ inoremap '' ''<Left>
 nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
 set pastetoggle=<Leader>v
 
+
+"cscope
 if has("cscope")
   set csprg=/usr/bin/cscope
   set csto=0
@@ -69,6 +71,8 @@ fu! RebuildCSTags()
 endf
 nmap <Leader>r :call RebuildCSTags()<cr>
 nmap <Leader>rc :call RebuildCTags()<cr>
+
+"/cscope
 set bs=2
 set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif 
@@ -120,7 +124,7 @@ nmap <c-g>e :!grip --gfm --wide --export '%:p'<cr>
 nmap <c-f>f :/<c-r>=expand("<cword>")<cr><cr>
 
 "rainbow paren
-nmap <Leader>rp :RainbowParenthesesToggleAll<cr>
+"nmap <Leader>rp :RainbowParenthesesToggleAll<cr>
 
 nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
 "
@@ -163,8 +167,8 @@ au BufNewFile,BufRead,BufWrite,BufWritePost *.md call SetMarkdownMode()
 
 au BufNewFile,BufRead,BufWrite,BufWritePost *.cljs set ft=clojure
 " au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadBraces
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadBraces
 "NERD
 let NERD_erlang_alt_style=1
 
