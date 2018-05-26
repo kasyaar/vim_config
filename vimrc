@@ -2,7 +2,7 @@ source ~/.vim/plug.vim
 
 
 set nocompatible 
-"Подсвечивать найденный фрагменты
+" highlight found words
 set hlsearch
 set nowrap
 set ts=4 sts=4 sw=4 expandtab
@@ -10,20 +10,23 @@ set nu "set bg=dark set foldmethod=indent
 set autoindent
 set smartindent
 set bg=dark
-" Не выгружать буферы при переключении
+
+" don't unload buffers when switching along
 set hidden
 syntax on
-"set spell
-set spelllang=ru,en
+
+" set spell
+set spelllang=en,ru
 set termencoding=utf8
 set fileencodings=utf8,cp1251
 set encoding=utf8
 set incsearch
 set vb t_vb= 
-" Поддержка мыши
+" Mouse support
 set mouse=a
 set mousemodel=popup
-" Папка для swp файлов(дабы не захламлять working dir)
+
+" swp folder
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 " Опции сесссий
@@ -31,9 +34,9 @@ set sessionoptions=curdir,buffers,tabpages
 " show completion menu for only one founded completion
 set cot+=menuone
 
-" Включаем filetype indent
+" Activate filetype indent
 filetype indent on
-" Включаем filetype плугин. Настройки, специфичные для определынных файлов мы разнесём по разным местам
+" Activate filetype plugin.
 filetype plugin on
 
 set autoread
