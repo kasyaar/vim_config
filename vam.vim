@@ -40,7 +40,6 @@ call vam#ActivateAddons([
             \"github:kien/rainbow_parentheses.vim",
             \"eclipse", 
             \"github:kasyaar/syntastic",
-            \"FuzzyFinder",
             \"bufexplorer.zip",
             \"github:garbas/vim-snipmate",
             \"github:honza/vim-snippets",
@@ -52,7 +51,7 @@ call vam#ActivateAddons([
             \"github:oscarh/vimerl"
             \], {'auto_install' : 0})
 " use <c-x><c-p> to complete plugin names
-
+"\"FuzzyFinder",
 " OPTION 3: Create a file ~/.vim-srcipts putting a PLUGIN_NAME into each line
 " See lazy loading plugins section in README.md for details
 "call vam#Scripts('~/.vim-scripts', {'tag_regex': '.*'})
