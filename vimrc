@@ -62,11 +62,11 @@ if has("cscope")
   endif
 endif
 fu! RebuildCTags()
-    let command = "ctags --langmap=Lisp:.clj.cljs -R"
+    let command = "ctags --langmap=lisp:.clj.cljs,rust:.rs -R"
     let out = system(command)
 endf
 fu! RebuildCSTags()
-    let extensions=['clj', 'js','rb', 'php','py', 'vim','html', 'xml', 'xul', 'sh', 'erl', 'hrl']
+    let extensions=['clj', 'js','rb', 'php','py', 'vim','html', 'xml', 'xul', 'sh', 'erl', 'hrl', 'rs']
     "find . -type file |grep -E '\.(html|sh|js|rb|py|vim|xul|xml|erl|hrl)$'
     let command = "find . -type f|grep -E '.*\\.(".join(extensions, '|').")$' > ./cscope.files && cscope -b"
     "echo command
@@ -86,6 +86,12 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strf
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_go_checkers = ['rust']
 
 let g:NERDSpaceDelims = 1
 
@@ -107,6 +113,8 @@ vmap <Leader>gp <esc>:Git push<cr>
 imap <Leader>gp <esc>:Git push<cr>
 "Gcommit
 nmap <Leader>gci :Gcommit<cr>
+"branch
+nmap <Leader>co <esc>:Git checkout 
 "Git
 nmap <Leader>g :Git 
 
@@ -176,4 +184,12 @@ let g:rbpt_colorpairs = [
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-let g:UltiSnipsListSnippets="<c-l>"
+
+let g:rustfmt_autosave = 1
+map! ii <Esc>
+colo desert
+
+set hidden
+let g:racer_cmd = "/Users/kasyaar/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+

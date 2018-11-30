@@ -1,5 +1,5 @@
 " Start without the toolbar
-set guioptions-=T
+" set guioptions-=T
 color desert
 " Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))

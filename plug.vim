@@ -14,7 +14,14 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+
+Plug 'flazz/vim-colorschemes'
+Plug 'andreypopp/vim-colors-plain'
+Plug 'nightsense/rusticated'
+
+
+
 
 call plug#end()
