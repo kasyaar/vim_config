@@ -16,6 +16,8 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
+Plug 'jiangmiao/auto-pairs'
+Plug 'majutsushi/tagbar'
 
 Plug 'flazz/vim-colorschemes'
 Plug 'andreypopp/vim-colors-plain'

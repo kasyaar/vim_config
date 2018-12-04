@@ -6,7 +6,9 @@ set nocompatible
 set hlsearch
 set nowrap
 set ts=4 sts=4 sw=4 expandtab
-set nu "set bg=dark set foldmethod=indent
+set nu 
+set bg=dark 
+set foldmethod=indent
 set autoindent
 set smartindent
 set bg=dark
@@ -42,29 +44,23 @@ filetype plugin on
 
 set autoread
 
-inoremap () ()<Left>
-inoremap [] []<Left>
-inoremap {} {}<Left>
-inoremap "" ""<Left>
-inoremap '' ''<Left>
-
 nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
 set pastetoggle=<Leader>v
 
 
 "cscope
 if has("cscope")
-  set csprg=/usr/bin/cscope
+  set csprg=/usr/bin/env\ cscope"
   set csto=0
   set cst
   if filereadable("cscope.out")
     cs add cscope.out
   endif
 endif
-fu! RebuildCTags()
-    let command = "ctags --langmap=lisp:.clj.cljs,rust:.rs -R"
-    let out = system(command)
-endf
+" fu! RebuildCTags()
+    " let command = "ctags --langmap=lisp:.clj.cljs,rust:.rs -R"
+    " let out = system(command)
+" endf
 fu! RebuildCSTags()
     let extensions=['clj', 'js','rb', 'php','py', 'vim','html', 'xml', 'xul', 'sh', 'erl', 'hrl', 'rs']
     "find . -type file |grep -E '\.(html|sh|js|rb|py|vim|xul|xml|erl|hrl)$'
@@ -74,24 +70,28 @@ fu! RebuildCSTags()
     cs reset
 endf
 nmap <Leader>r :call RebuildCSTags()<cr>
-nmap <Leader>rc :call RebuildCTags()<cr>
+" nmap <Leader>rc :call RebuildCTags()<cr>
 
-"/cscope
+"cscope
 set bs=2
 set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif 
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 set laststatus=2
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+
+"Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_go_checkers = ['rust']
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+
 
 let g:NERDSpaceDelims = 1
 
@@ -121,10 +121,16 @@ nmap <Leader>g :Git
 "cscope
 nmap <c-f>c :cs find c <cword><cr>
 nmap <c-f>e :cs find e <cword><cr>
+nmap <c-f>d :cs find d <cword><cr>
+
+"Tagbar
+nmap <Leader>t :TagbarToggle<cr>
+vmap <Leader>t <esc>:TagbarToggle<cr>i
+imap <Leader>t <esc>:TagbarToggle<cr>i
 
 "grip
-nmap <c-g>b :!grip --gfm --wide -b '%:p'<cr>
-nmap <c-g>e :!grip --gfm --wide --export '%:p'<cr>
+" nmap <c-g>b :!grip --gfm --wide -b '%:p'<cr>
+" nmap <c-g>e :!grip --gfm --wide --export '%:p'<cr>
 
 "search current word in whole doc
 nmap <c-f>f :/<c-r>=expand("<cword>")<cr><cr>
@@ -132,6 +138,7 @@ nmap <c-f>f :/<c-r>=expand("<cword>")<cr><cr>
 "rainbow parentheses
 nmap <Leader>rp :RainbowParenthesesToggleAll<cr>
 
+"search and replace macro
 nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
 
 
@@ -184,12 +191,20 @@ let g:rbpt_colorpairs = [
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-
+"rustfmt
 let g:rustfmt_autosave = 1
-map! ii <Esc>
+
 colo desert
 
+"racer
 set hidden
-let g:racer_cmd = "/Users/kasyaar/.cargo/bin/racer"
+let g:racer_cmd = "~/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
+
+"auto-pairs
+let g:AutoPairsFlyMode = 1
+let g:AutoPairsShortcutToggle = '<c-c>p'
+let g:AutoPairsShortcutBackInsert = '<c-c>b'
+let g:AutoPairsShortcutFastWrap = '<c-c>e'
+let g:AutoPairsShortcutJump = '<c-c>n'
 
