@@ -194,7 +194,7 @@ endif
 "rustfmt
 let g:rustfmt_autosave = 1
 
-colo paramount
+colo monochrome
 
 "racer
 set hidden

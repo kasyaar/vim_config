@@ -1,6 +1,6 @@
 " Start without the toolbar
 " set guioptions-=T
-color paramount
+color monochrome
 " Project Tree
 autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 " If the parameter is a directory, cd into it
