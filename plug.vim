@@ -23,7 +23,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'andreypopp/vim-colors-plain'
 Plug 'nightsense/rusticated'
 
-
+Plug 'tpope/vim-fireplace', { 'for': 'clojure'  }
 
 
 call plug#end()
