@@ -32,6 +32,7 @@ set mousemodel=popup
 " swp folder
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
+set undodir=~/.vim/backup
 " session options
 set sessionoptions=curdir,buffers,tabpages
 " show completion menu for only one founded completion
@@ -194,7 +195,7 @@ endif
 "rustfmt
 let g:rustfmt_autosave = 1
 
-colo monochrome
+" colo monochrome
 
 "racer
 set hidden
