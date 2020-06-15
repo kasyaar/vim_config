@@ -209,3 +209,5 @@ let g:AutoPairsShortcutBackInsert = '<c-c>b'
 let g:AutoPairsShortcutFastWrap = '<c-c>e'
 let g:AutoPairsShortcutJump = '<c-c>n'
 
+"search for whole line over your cursor
+nnoremap <leader>* 0y$/\V<c-r>"<cr>"
