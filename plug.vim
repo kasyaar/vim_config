@@ -26,6 +26,7 @@ Plug 'nightsense/rusticated'
 Plug 'tpope/vim-fireplace', { 'for': 'clojure'  }
 
 Plug 'freitass/todo.txt-vim'
+Plug 'davidhalter/jedi-vim'
 
 
 call plug#end()
