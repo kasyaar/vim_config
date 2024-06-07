@@ -1,4 +1,5 @@
-source ~/.vim/plug.vim
+set runtimepath+=$HOME/.vim
+source $HOME/.vim/plug.vim
 
 
 set nocompatible 
@@ -30,9 +31,9 @@ set mouse=a
 set mousemodel=popup
 
 " swp folder
-set backupdir=~/.vim/backup
-set directory=~/.vim/backup
-set undodir=~/.vim/backup
+set backupdir=$HOME/.vim/backup
+set directory=$HOME/.vim/backup
+set undodir=$HOME/.vim/backup
 " session options
 set sessionoptions=curdir,buffers,tabpages
 " show completion menu for only one founded completion
@@ -49,33 +50,8 @@ nmap <c-c>; :%s/\<<c-r>=expand("<cword>")<cr>\>/
 set pastetoggle=<Leader>v
 
 
-"cscope
-if has("cscope")
-  set csprg=/usr/bin/env\ cscope"
-  set csto=0
-  set cst
-  if filereadable("cscope.out")
-    cs add cscope.out
-  endif
-endif
-" fu! RebuildCTags()
-    " let command = "ctags --langmap=lisp:.clj.cljs,rust:.rs -R"
-    " let out = system(command)
-" endf
-fu! RebuildCSTags()
-    let extensions=['clj', 'js','rb', 'php','py', 'vim','html', 'xml', 'xul', 'sh', 'erl', 'hrl', 'rs']
-    "find . -type file |grep -E '\.(html|sh|js|rb|py|vim|xul|xml|erl|hrl)$'
-    let command = "find . -type f|grep -E '.*\\.(".join(extensions, '|').")$' > ./cscope.files && cscope -b"
-    "echo command
-    let out = system(command)
-    cs reset
-endf
-nmap <Leader>r :call RebuildCSTags()<cr>
-" nmap <Leader>rc :call RebuildCTags()<cr>
-
-"cscope
 set bs=2
-set viminfo='10,\"100,:20,%,n~/.viminfo
+set viminfo='10,\"100,:20,%,n$HOME/.viminfo
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif 
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 set laststatus=2
@@ -85,18 +61,6 @@ set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strf
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = {
-        \ "mode": "active",
-        \ "active_filetypes": [],
-        \ "passive_filetypes": ["rust"] }
-
-
 
 
 let g:NERDSpaceDelims = 1
@@ -197,15 +161,8 @@ let g:rbpt_colorpairs = [
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-"rustfmt
-let g:rustfmt_autosave = 1
 
 " colo monochrome
-
-"racer
-set hidden
-let g:racer_cmd = "~/.cargo/bin/racer"
-let g:racer_experimental_completer = 1
 
 "auto-pairs
 let g:AutoPairsFlyMode = 1
@@ -217,5 +174,3 @@ let g:AutoPairsShortcutJump = '<c-c>n'
 "search for whole line over your cursor
 nnoremap <leader>* 0y$/\V<c-r>"<cr>"
 
-let g:snipMate = { 'snippet_version' : 1 }
-let g:jedi#popup_on_dot = 0
