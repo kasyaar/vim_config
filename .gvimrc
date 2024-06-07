@@ -18,4 +18,4 @@ function s:CdIfDirectory(directory)
     bd
   endif
 endfunction
-
+set guifont=:h12
