@@ -1,9 +1,14 @@
 # INSTALL
+## Script installation
+```sh
+curl -sSL https://raw.githubusercontent.com/kasyaar/vim_config/master/install.sh | sh
+```
+## Manual Installation 
 ```sh
 sudo apt-get install git mercurial cscope
 git clone git://github.com/kasyaar/vim_config.git $HOME/.vim
-ln -s $HOME/.vim/vimrc $HOME/.vimrc
-ln -s $HOME/.vim/gvimrc $HOME/.gvimrc
+ln -s $HOME/.vim/.vimrc $HOME/.vimrc
+ln -s $HOME/.vim/.gvimrc $HOME/.gvimrc
 vim +PlugInstall +qall
 ```
 
