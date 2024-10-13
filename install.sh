@@ -5,8 +5,8 @@ if command -v git > /dev/null 2>&1; then
     mv ~/.vim ~/.vim.$(date +%Y%m%d-%H%M%S) > /dev/null 2>&1
     echo "Getting package from https://github.com/kasyaar/vim_config.git..."
     git clone https://github.com/kasyaar/vim_config.git ~/.vim > /dev/null 2>&1
-    ln -s ~/.vim/.vimrc ~/ > /dev/null 2>&1
-    ln -s ~/.vim/.gvimrc ~/ > /dev/null 2>&1
+    ln -sf ~/.vim/.vimrc ~/ > /dev/null 2>&1
+    ln -sf ~/.vim/.gvimrc ~/ > /dev/null 2>&1
 else
     echo "GIT is not installed. Please install and run again."
 fi
