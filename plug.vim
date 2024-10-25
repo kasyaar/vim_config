@@ -21,4 +21,7 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-dadbod'
 Plug 'mbbill/undotree'
 
+"Plug 'williamboman/mason.nvim'
+"Plug 'huggingface/llm.nvim'
+
 call plug#end()

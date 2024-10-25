@@ -12,6 +12,8 @@ ln -s $HOME/.vim/.gvimrc $HOME/.gvimrc
 vim +PlugInstall +qall
 ```
 ## Neovim instructions
+
+### To use with init.vim
 open nvim
 ```
 :exe 'edit '.stdpath('config').'/init.vim'
@@ -25,6 +27,15 @@ source ~/.vimrc
 ```
 save and re-run nvim
 instructions was taken from official [Transitioning from Vim](https://neovim.io/doc/user/nvim.html#nvim) page.
+
+### To use with init.lua
+```sh
+# Linux
+cp ~/.vim/init.lua.example ~/.config/nvim/init.lua
+# Windows
+cp ~/.vim/init.lua.example ~/AppData/Local/nvim/init.lua
+
+```
 
 
 
