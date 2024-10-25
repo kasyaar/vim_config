@@ -22,19 +22,4 @@ function prompt {
     # $out += "$(($nestedPromptLevel + 1)) ";
     return $out
 }
-function StartVM {
-    param (
-            [string]$name
-          )
-    $startVMCommand="VBoxManage startvm $name --type headless"
-    Write-Output "Starting VM: $name in headless mode..."
-    Invoke-Expression $startVMCommand
-}
-function ControlVM {
-    param (
-            [string]$name,
-            [string]$command
-          )
-    $controlVMCommand="VBoxManage controlvm $name $command"
-}
 
