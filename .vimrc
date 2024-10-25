@@ -55,27 +55,25 @@ nmap <Leader>t :TagbarToggle<cr>
 vmap <Leader>t <esc>:TagbarToggle<cr>i
 imap <Leader>t <esc>:TagbarToggle<cr>i
 "rainbow parentheses
-let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
-let g:snips_author = "Dmitry Kasimtsev"
 nmap <Leader>rp :RainbowParenthesesToggleAll<cr>
-let g:rbpt_colorpairs = [
-    \ ['brown',       'LightGreen'],
-    \ ['Darkblue',    'orange'],
-    \ ['darkgray',    'cyan1'],
-    \ ['darkgreen',   'HotPink'],
-    \ ['darkcyan',    'LightGreen'],
-    \ ['darkred',     'orange'],
-    \ ['darkmagenta', 'cyan1'],
-    \ ['brown',       'HotPink'],
-    \ ['gray',        'LightGreen'],
-    \ ['black',       'orange'],
-    \ ['darkmagenta', 'cyan1'],
-    \ ['Darkblue',    'HotPink'],
-    \ ['darkgreen',   'LightGreen'],
-    \ ['darkcyan',    'orange'],
-    \ ['darkred',     'cyan1'],
-    \ ['red',         'HotPink'],
-    \ ]
+"let g:rbpt_colorpairs = [
+    "\ ['brown',       'LightGreen'],
+    "\ ['Darkblue',    'orange'],
+    "\ ['darkgray',    'cyan1'],
+    "\ ['darkgreen',   'HotPink'],
+    "\ ['darkcyan',    'LightGreen'],
+    "\ ['darkred',     'orange'],
+    "\ ['darkmagenta', 'cyan1'],
+    "\ ['brown',       'HotPink'],
+    "\ ['gray',        'LightGreen'],
+    "\ ['black',       'orange'],
+    "\ ['darkmagenta', 'cyan1'],
+    "\ ['Darkblue',    'HotPink'],
+    "\ ['darkgreen',   'LightGreen'],
+    "\ ['darkcyan',    'orange'],
+    "\ ['darkred',     'cyan1'],
+    "\ ['red',         'HotPink'],
+    "\ ]
 "auto-pairs
 let g:AutoPairsFlyMode = 1
 let g:AutoPairsShortcutToggle = '<c-c>p'
@@ -86,5 +84,7 @@ let g:AutoPairsShortcutJump = '<c-c>n'
 nnoremap <F5> :UndotreeToggle<CR>
 "snipMate
 let g:snipMate = { 'snippet_version' : 1 }
+let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
+let g:snips_author = "Dmitry Kasimtsev"
 "jedi
 "let g:jedi#popup_on_dot = 0

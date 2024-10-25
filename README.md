@@ -28,17 +28,6 @@ source ~/.vimrc
 save and re-run nvim
 instructions was taken from official [Transitioning from Vim](https://neovim.io/doc/user/nvim.html#nvim) page.
 
-### To use with init.lua
-```sh
-# Linux
-cp ~/.vim/init.lua.example ~/.config/nvim/init.lua
-# Windows
-cp ~/.vim/init.lua.example ~/AppData/Local/nvim/init.lua
-
-```
-
-
-
 # Plugins that will be installed
 
 This vim config distribution uses [Minimalist Vim Plugin Manager](https://github.com/junegunn/vim-plug) which I think is
