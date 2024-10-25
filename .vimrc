@@ -176,3 +176,5 @@ nnoremap <leader>* 0y$/\V<c-r>"<cr>"
 
 let g:snipMate = { 'snippet_version' : 1 }
 let g:jedi#popup_on_dot = 0
+
+nnoremap <F5> :UndotreeToggle<CR>
