@@ -24,6 +24,8 @@ let &packpath = &runtimepath
 source ~/.vimrc
 ```
 save and re-run nvim
+instructions was taken from official [Transitioning from Vim](https://neovim.io/doc/user/nvim.html#nvim) page.
+
 
 
 # Plugins that will be installed
