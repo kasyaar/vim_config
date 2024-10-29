@@ -10,18 +10,13 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'majutsushi/tagbar'
 Plug 'flazz/vim-colorschemes'
 Plug 'andreypopp/vim-colors-plain'
-
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
-
-" "Plug 'davidhalter/jedi-vim'
-
+Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-dadbod'
 Plug 'mbbill/undotree'
-
 "Plug 'williamboman/mason.nvim'
 "Plug 'huggingface/llm.nvim'
-
 call plug#end()

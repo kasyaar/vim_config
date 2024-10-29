@@ -88,3 +88,8 @@ let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
 let g:snips_author = "Dmitry Kasimtsev"
 "jedi
 "let g:jedi#popup_on_dot = 0
+if exists("g:neovide")
+    set gfn=Courier\ New:h12:el
+    colo monochrome
+    " Put anything you want to happen only in Neovide here
+endif
