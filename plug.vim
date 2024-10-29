@@ -17,6 +17,7 @@ Plug 'honza/vim-snippets'
 Plug 'davidhalter/jedi-vim'
 Plug 'tpope/vim-dadbod'
 Plug 'mbbill/undotree'
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 "Plug 'williamboman/mason.nvim'
 "Plug 'huggingface/llm.nvim'
 call plug#end()

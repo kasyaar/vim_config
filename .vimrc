@@ -97,4 +97,6 @@ if exists("g:neovide")
     set gfn=Courier\ New:h12:el
     colo monochrome
     autocmd VimEnter * NERDTree
+    lua require("toggleterm").setup()
+    nmap <F4> :ToggleTerm<CR>
 endif
