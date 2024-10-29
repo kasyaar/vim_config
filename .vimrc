@@ -1,7 +1,6 @@
 set runtimepath+=$HOME/.vim
 source $HOME/.vim/plug.vim
 
-
 set nocompatible 
 " highlight found words
 set hlsearch
@@ -50,6 +49,10 @@ set autoread
 nmap <Leader>p :NERDTreeToggle<cr>
 vmap <Leader>p <esc>:NERDTreeToggle<cr>i
 imap <Leader>p <esc>:NERDTreeToggle<cr>i
+let g:NERDTreeFileLines = 1
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeShowBookmarks = 1
 "Tagbar
 nmap <Leader>t :TagbarToggle<cr>
 vmap <Leader>t <esc>:TagbarToggle<cr>i
@@ -89,7 +92,9 @@ let g:snips_author = "Dmitry Kasimtsev"
 "jedi
 "let g:jedi#popup_on_dot = 0
 if exists("g:neovide")
+    let g:neovide_cursor_vfx_mode = "railgun"
+    let g:neovide_cursor_animation_length = 0.13
     set gfn=Courier\ New:h12:el
     colo monochrome
-    " Put anything you want to happen only in Neovide here
+    autocmd VimEnter * NERDTree
 endif
