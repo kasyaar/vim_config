@@ -53,6 +53,7 @@ let g:NERDTreeFileLines = 1
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeShowBookmarks = 1
+let g:NERDTreeChDirMode = 3
 "Tagbar
 nmap <Leader>t :TagbarToggle<cr>
 vmap <Leader>t <esc>:TagbarToggle<cr>i
