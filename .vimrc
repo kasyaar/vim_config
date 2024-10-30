@@ -92,12 +92,5 @@ let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
 let g:snips_author = "Dmitry Kasimtsev"
 "jedi
 "let g:jedi#popup_on_dot = 0
-if exists("g:neovide")
-    let g:neovide_cursor_vfx_mode = "railgun"
-    let g:neovide_cursor_animation_length = 0.13
-    set gfn=Courier\ New:h12:el
-    colo monochrome
-    autocmd VimEnter * NERDTree
-    lua require("toggleterm").setup()
-    nmap <F4> :ToggleTerm<CR>
-endif
+luafile $HOME/.vim/gen.lua
+source $HOME/.vim/neovide.vim
