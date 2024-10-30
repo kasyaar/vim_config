@@ -6,4 +6,5 @@ if exists("g:neovide")
     autocmd VimEnter * NERDTree
     lua require("toggleterm").setup()
     nmap <F4> :ToggleTerm<CR>
+    nmap <C-F4> :ToggleTerm direction=float<CR>
 endif

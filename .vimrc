@@ -11,7 +11,6 @@ set bg=dark
 set foldmethod=indent
 set autoindent
 set smartindent
-set bg=dark
 
 " don't unload buffers when switching along
 set hidden
@@ -92,5 +91,8 @@ let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
 let g:snips_author = "Dmitry Kasimtsev"
 "jedi
 "let g:jedi#popup_on_dot = 0
-luafile $HOME/.vim/gen.lua
+"gen.nvim
+if has("nvim")
+    luafile $HOME/.vim/gen.lua
+endif
 source $HOME/.vim/neovide.vim
