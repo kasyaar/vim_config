@@ -95,4 +95,5 @@ let g:snips_author = "Dmitry Kasimtsev"
 if has("nvim")
     luafile $HOME/.vim/gen.lua
 endif
+source $HOME/.vim/undotree.vim
 source $HOME/.vim/neovide.vim
