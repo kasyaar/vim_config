@@ -11,11 +11,9 @@ set bg=dark
 set foldmethod=indent
 set autoindent
 set smartindent
-
 " don't unload buffers when switching along
 set hidden
 syntax on
-
 " set spell
 set spelllang=en,ru
 set termencoding=utf8
@@ -23,11 +21,9 @@ set fileencodings=utf8,cp1251
 set encoding=utf8
 set incsearch
 set vb t_vb= 
-
 " Mouse support
 set mouse=a
 set mousemodel=popup
-
 " swp folder
 set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/backup
@@ -36,12 +32,10 @@ set undodir=$HOME/.vim/backup
 set sessionoptions=curdir,buffers,tabpages
 " show completion menu for only one founded completion
 set cot+=menuone
-
 " Activate filetype indent
 filetype indent on
 " Activate filetype plugin.
 filetype plugin on
-
 set autoread
 "PLUGINS
 "NERDTree
@@ -58,27 +52,31 @@ nmap <Leader>t :TagbarToggle<cr>
 vmap <Leader>t <esc>:TagbarToggle<cr>i
 imap <Leader>t <esc>:TagbarToggle<cr>i
 "rainbow parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 nmap <Leader>rp :RainbowParenthesesToggleAll<cr>
-"let g:rbpt_colorpairs = [
-    "\ ['brown',       'LightGreen'],
-    "\ ['Darkblue',    'orange'],
-    "\ ['darkgray',    'cyan1'],
-    "\ ['darkgreen',   'HotPink'],
-    "\ ['darkcyan',    'LightGreen'],
-    "\ ['darkred',     'orange'],
-    "\ ['darkmagenta', 'cyan1'],
-    "\ ['brown',       'HotPink'],
-    "\ ['gray',        'LightGreen'],
-    "\ ['black',       'orange'],
-    "\ ['darkmagenta', 'cyan1'],
-    "\ ['Darkblue',    'HotPink'],
-    "\ ['darkgreen',   'LightGreen'],
-    "\ ['darkcyan',    'orange'],
-    "\ ['darkred',     'cyan1'],
-    "\ ['red',         'HotPink'],
-    "\ ]
+let g:rbpt_colorpairs = [
+    \ ['brown',       'LightGreen'],
+    \ ['Darkblue',    'orange'],
+    \ ['darkgray',    'cyan1'],
+    \ ['darkgreen',   'HotPink'],
+    \ ['darkcyan',    'LightGreen'],
+    \ ['darkred',     'orange'],
+    \ ['darkmagenta', 'cyan1'],
+    \ ['brown',       'HotPink'],
+    \ ['gray',        'LightGreen'],
+    \ ['black',       'orange'],
+    \ ['darkmagenta', 'cyan1'],
+    \ ['Darkblue',    'HotPink'],
+    \ ['darkgreen',   'LightGreen'],
+    \ ['darkcyan',    'orange'],
+    \ ['darkred',     'cyan1'],
+    \ ['red',         'HotPink'],
+    \ ]
 "auto-pairs
-let g:AutoPairsFlyMode = 1
+let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutToggle = '<c-c>p'
 let g:AutoPairsShortcutBackInsert = '<c-c>b'
 let g:AutoPairsShortcutFastWrap = '<c-c>e'
@@ -95,6 +93,10 @@ let g:snips_author = "Dmitry Kasimtsev"
 if has("nvim")
     luafile $HOME/.vim/gen.lua
 endif
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
 source $HOME/.vim/undotree.vim
 source $HOME/.vim/neovide.vim
-so $HOME/.vim/check.vim
+source $HOME/.vim/check.vim
