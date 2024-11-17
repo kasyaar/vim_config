@@ -97,3 +97,4 @@ if has("nvim")
 endif
 source $HOME/.vim/undotree.vim
 source $HOME/.vim/neovide.vim
+so $HOME/.vim/check.vim
