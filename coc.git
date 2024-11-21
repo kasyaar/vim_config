@@ -1,0 +1,2 @@
+let g:coc_global_extensions = ['coc-git', 'coc-pyright']
+source $HOME/.vim/coc-git.vim

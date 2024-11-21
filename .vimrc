@@ -16,7 +16,7 @@ set hidden
 syntax on
 " set spell
 set spelllang=en,ru
-set termencoding=utf8
+"set termencoding=utf8
 set fileencodings=utf8,cp1251
 set encoding=utf8
 set incsearch
@@ -100,3 +100,4 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 source $HOME/.vim/undotree.vim
 source $HOME/.vim/neovide.vim
 source $HOME/.vim/check.vim
+source $HOME/.vim/coc.vim
