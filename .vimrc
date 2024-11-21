@@ -97,7 +97,7 @@ endif
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
-nmap gg :G<CR>
+nmap <Leader>g :G<CR>
 
 source $HOME/.vim/undotree.vim
 source $HOME/.vim/neovide.vim
