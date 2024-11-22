@@ -1,4 +1,12 @@
 #!/usr/bin/env sh
+check_editor() {
+    local editor="$1"
+    if command -v "$editor" > /dev/null 2>&1; then
+        return 0
+    else
+        return 1
+    fi
+}
 echo "Installing vim_config"
 if command -v git > /dev/null 2>&1; then
     echo "Backing up old .vim directory"
@@ -8,28 +16,30 @@ if command -v git > /dev/null 2>&1; then
     ln -sf ~/.vim/.vimrc ~/ > /dev/null 2>&1
     ln -sf ~/.vim/.gvimrc ~/ > /dev/null 2>&1
 else
-    echo "GIT is not installed. Please install and run again."
+    echo "git is not installed. Please install and run again."
 fi
-NVIM_CONFIG_PATH=$HOME/.config/nvim
-if command -v vim > /dev/null 2>&1 || command -v nvim 2>&1; then
+
+if check_editor vim || check_editor nvim; then
     EDITOR=$(command -v vim || command -v nvim)
-    if command -v nvim 2>&1; then
+    if check_editor nvim; then
+        NVIM_CONFIG_PATH=$HOME/.config/nvim
         mkdir -p $NVIM_CONFIG_PATH > /dev/null 2>&1
         cp $HOME/.vim/init.vim.example $NVIM_CONFIG_PATH/init.vim
     fi
     echo "Installing vim plugins($EDITOR +PlugInstall +qall)..."
-    $EDITOR +PlugInstall +qall > /dev/null 2>&1
-    echo "Done"
+    #$EDITOR +PlugInstall +qall > /dev/null 2>&1
+    $EDITOR +PlugInstall +qall
 else
     echo "vim/neovim is not installed. Please install and run again."
 fi
-# check pipx and exit if not added
 if command -v pipx > /dev/null 2>&1; then
-    # Install bandit and python-lsp-server
-    echo "Installing bandit and python-lsp-server"
+    #echo "Installing bandit and python-lsp-server"
+    echo "Installing bandit"
     pipx install bandit > /dev/null 2>&1
-    pipx install "python-lsp-server[all]" > /dev/null 2>&1
+    #pipx install "python-lsp-server[all]" > /dev/null 2>&1
+    echo "Installation finished."
+    echo "Don't forget to install nodejs and npm."
+    echo "It's required for code completion and other features."
 else
     echo "pipx need to be installed"
 fi
-echo "Installation finished. Don't forget to install nodejs and npm."
