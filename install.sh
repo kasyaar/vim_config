@@ -10,9 +10,22 @@ if command -v git > /dev/null 2>&1; then
 else
     echo "GIT is not installed. Please install and run again."
 fi
-if command -v vim > /dev/null 2>&1; then
-    echo "Installing VIM plugins(vim +PlugInstall +qall)..."
-    vim +PlugInstall +qall > /dev/null 2>&1
+check_editor() {
+    local editor="$1"
+    if command -v "$editor" > /dev/null 2>&1; then
+        echo "$editor found."
+        return 0
+    else
+        echo "$editor not found."
+        return 1
+    fi
+}
+
+if check_editor vim || check_editor nvim; then
+#if command -v vim > /dev/null 2>&1; then
+    EDITOR=$(command -v vim || command -v nvim)
+    echo "Installing VIM plugins($EDITOR +PlugInstall +qall)..."
+    $EDITOR +PlugInstall +qall > /dev/null 2>&1
     echo "Done"
 else
     echo "VIM is not installed. Please install and run again."
