@@ -26,3 +26,4 @@ if command -v pipx > /dev/null 2>&1; then
 else
     echo "pipx need to be installed"
 fi
+echo "Installation finished. Don't forget to install nodejs and npm."
