@@ -17,3 +17,12 @@ if command -v vim > /dev/null 2>&1; then
 else
     echo "VIM is not installed. Please install and run again."
 fi
+# check pipx and exit if not added
+if command -v pipx > /dev/null 2>&1; then
+    # Install bandit and python-lsp-server
+    echo "Installing bandit and python-lsp-server"
+    pipx install bandit > /dev/null 2>&1
+    pipx install "python-lsp-server[all]" > /dev/null 2>&1
+else
+    echo "pipx need to be installed"
+fi
