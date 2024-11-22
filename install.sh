@@ -13,26 +13,25 @@ fi
 check_editor() {
     local editor="$1"
     if command -v "$editor" > /dev/null 2>&1; then
-        echo "$editor found."
+        #echo "$editor found."
         return 0
     else
-        echo "$editor not found."
+        #echo "$editor not found."
         return 1
     fi
 }
 NVIM_CONFIG_PATH=$HOME/.config/nvim
 if check_editor vim || check_editor nvim; then
-#if command -v vim > /dev/null 2>&1; then
     EDITOR=$(command -v vim || command -v nvim)
     if check_editor nvim; then
         mkdir -p $NVIM_CONFIG_PATH > /dev/null 2>&1
         cp $HOME/.vim/init.vim.example $NVIM_CONFIG_PATH/init.vim
     fi
-    echo "Installing VIM plugins($EDITOR +PlugInstall +qall)..."
+    echo "Installing vim plugins($EDITOR +PlugInstall +qall)..."
     $EDITOR +PlugInstall +qall > /dev/null 2>&1
     echo "Done"
 else
-    echo "VIM is not installed. Please install and run again."
+    echo "vim/neovim is not installed. Please install and run again."
 fi
 # check pipx and exit if not added
 if command -v pipx > /dev/null 2>&1; then
