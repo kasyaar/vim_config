@@ -20,10 +20,14 @@ check_editor() {
         return 1
     fi
 }
-
+NVIM_CONFIG_PATH=$HOME/.config/nvim
 if check_editor vim || check_editor nvim; then
 #if command -v vim > /dev/null 2>&1; then
     EDITOR=$(command -v vim || command -v nvim)
+    if check_editor nvim; then
+        mkdir -p $NVIM_CONFIG_PATH > /dev/null 2>&1
+        cp $HOME/.vim/init.vim.example $NVIM_CONFIG_PATH
+    fi
     echo "Installing VIM plugins($EDITOR +PlugInstall +qall)..."
     $EDITOR +PlugInstall +qall > /dev/null 2>&1
     echo "Done"
