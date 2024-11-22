@@ -3,7 +3,7 @@ missing=""
 commands="vim git pipx node npm"
 set -- $commands
 for command; do
-    command -v "$command" &> /dev/null || { echo "Error: $command not found"; missing="$missing $command"; }
+    command -v "$command" > /dev/null 2>&1 || { echo "Error: $command not found"; missing="$missing $command"; }
 done
 
 if [ -z "$missing" ]; then
