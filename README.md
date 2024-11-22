@@ -1,7 +1,7 @@
 # INSTALL
 ## Script installation
 ```sh
-curl -sSL https://raw.githubusercontent.com/kasyaar/vim_config/master/install.sh | sh
+curl -sSL https://raw.githubusercontent.com/kasyaar/vim_config/main/install.sh | sh
 ```
 ## Manual Installation 
 ```sh
