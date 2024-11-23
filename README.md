@@ -35,14 +35,27 @@ simplest addon manager for vim.
 
 Following plugins will be installed after apply this vim config:
 
-Plugin|Description
-------|-----------
-[rainbow_parentheses.vim](http://github.com/kien/rainbow_parentheses.vim) | helpful when you work with clojure
-[syntastic](http://github.com/kasyaar/syntastic) | syntax checker for many languages
-[bufexplorer](https://github.com/jlanzarotta/bufexplorer) | make buffer management much easier
-[vim-snippets](http://github.com/honza/vim-snippets) | a bunch of snippets for different languages
-[nerdtree](http://github.com/scrooloose/nerdtree) | project tree
-[nerdcommenter](http://github.com/scrooloose/nerdcommenter) | ads useful commenting feature 
+| Plugin                                                                    | Description                                 |
+|---------------------------------------------------------------------------|---------------------------------------------|
+| [rainbow_parentheses.vim](http://github.com/kien/rainbow_parentheses.vim) | helpful when you work with clojure          |
+| [syntastic](http://github.com/kasyaar/syntastic)                          | syntax checker for many languages           |
+| [bufexplorer](https://github.com/jlanzarotta/bufexplorer)                 | make buffer management much easier          |
+| [vim-snippets](http://github.com/honza/vim-snippets)                      | a bunch of snippets for different languages |
+| [nerdtree](http://github.com/scrooloose/nerdtree)                         | project tree                                |
+| [nerdcommenter](http://github.com/scrooloose/nerdcommenter)               | ads useful commenting feature               |
+| [auto-pairs]()                                                            | tbd                                         |
+| [vim-colorschemes]()                                                      | tbd                                         |
+| [vim-dadbod]()                                                            | tbd                                         |
+| [undotree]()                                                              | tbd                                         |
+| [toggleterm]()                                                            | tbd                                         |
+| [gen.nvim]()                                                              | tbd                                         |
+| [vimwiki]()                                                               | tbd                                         |
+| [vim-airline]()                                                           | tbd                                         |
+| [csv.vim]()                                                               | tbd                                         |
+| [coc.nvim]()                                                              | tbd                                         |
+| [coc.nvim]()                                                              | tbd                                         |
+| [vim-fugitive]()                                                          | tbd                                         |
+| [markdown-preview.nvim]()                                                 | tbd                                         |
 <!--[ultisnips](http://github.com/SirVer/ultisnips)| snippet engine-->
 
 # Other customizations
