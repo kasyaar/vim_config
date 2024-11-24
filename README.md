@@ -3,6 +3,10 @@
 ```sh
 curl -sSL https://raw.githubusercontent.com/kasyaar/vim_config/main/install.sh | sh
 ```
+For light version(e.g. for server)
+```sh
+curl -sSL https://raw.githubusercontent.com/kasyaar/vim_config/light/install.sh | sh
+```
 ## Manual Installation 
 ```sh
 sudo apt-get install git mercurial cscope
