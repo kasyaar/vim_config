@@ -86,20 +86,10 @@ nnoremap <F5> :UndotreeToggle<CR>
 "snipMate
 let g:snipMate = { 'snippet_version' : 1 }
 let g:my_email_addr = "<".system("echo -n `git config --get user.email`").">"
-let g:snips_author = "Dmitry Kasimtsev"
+let g:snips_author = "<".system("echo -n `git config --get user.name`").">"
 "jedi
-"let g:jedi#popup_on_dot = 0
-"gen.nvim
-if has("nvim")
-    luafile $HOME/.vim/gen.lua
-endif
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
-nmap <Leader>g :G<CR>
-
 source $HOME/.vim/undotree.vim
-source $HOME/.vim/neovide.vim
-source $HOME/.vim/check.vim
-source $HOME/.vim/coc.vim

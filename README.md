@@ -52,10 +52,6 @@ Following plugins will be installed after apply this vim config:
 | [vimwiki]()                                                               | tbd                                         |
 | [vim-airline]()                                                           | tbd                                         |
 | [csv.vim]()                                                               | tbd                                         |
-| [coc.nvim]()                                                              | tbd                                         |
-| [coc.nvim]()                                                              | tbd                                         |
-| [vim-fugitive]()                                                          | tbd                                         |
-| [markdown-preview.nvim]()                                                 | tbd                                         |
 <!--[ultisnips](http://github.com/SirVer/ultisnips)| snippet engine-->
 
 # Other customizations
