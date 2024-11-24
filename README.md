@@ -5,7 +5,7 @@ curl -sSL https://raw.githubusercontent.com/kasyaar/vim_config/main/install.sh |
 ```
 For light version(e.g. for server)
 ```sh
-curl -sSL https://raw.githubusercontent.com/kasyaar/vim_config/light/install.sh | sh
+curl -sSL https://raw.githubusercontent.com/kasyaar/vim_config/refs/heads/light/install.sh | sh
 ```
 ## Manual Installation 
 ```sh
