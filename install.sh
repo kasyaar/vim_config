@@ -15,7 +15,7 @@ fi
 echo "Backing up old .vim directory"
 mv ~/.vim ~/.vim.$(date +%Y%m%d-%H%M%S) > /dev/null 2>&1
 echo "Getting package from https://github.com/kasyaar/vim_config.git..."
-git clone https://github.com/kasyaar/vim_config.git ~/.vim > /dev/null 2>&1
+git clone -b light https://github.com/kasyaar/vim_config.git ~/.vim > /dev/null 2>&1
 ln -sf ~/.vim/.vimrc ~/ > /dev/null 2>&1
 
 NVIM_CONFIG_PATH=$HOME/.config/nvim
