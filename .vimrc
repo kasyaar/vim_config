@@ -13,8 +13,13 @@ set smartindent
 " don't unload buffers when switching along
 set hidden
 syntax on
- set spell
 set spelllang=en
+set spell
+augroup noSpell
+    autocmd!
+    autocmd FileType nerdtree,toggleterm setlocal nospell
+augroup END
+set spell
 "set termencoding=utf8
 set fileencodings=utf8
 set encoding=utf8
