@@ -13,7 +13,7 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive', {'on': 'G'}
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 if !exists('$VIM_BASE')
-    Plug 'flazz/vim-colorschemes', {'on': 'colo'}
+    Plug 'flazz/vim-colorschemes'
     Plug 'andreypopp/vim-colors-plain'
     Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
     Plug 'vimwiki/vimwiki'
