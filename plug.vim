@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'jlanzarotta/bufexplorer'
-Plug 'preservim/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'preservim/nerdtree', {'on': 'NERDTreeToggle', 'tag': '7.0.0'}
 Plug 'preservim/nerdcommenter'
 Plug 'vim-syntastic/syntastic'
 Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesLoadRound'}
