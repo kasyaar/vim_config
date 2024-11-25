@@ -51,7 +51,7 @@ if [ -z "$VIM_BASE" ]; then
     cp $HOME/.vim/coc-settings.json $NVIM_CONFIG_PATH/
     echo "Installing vim plugins(vim +PlugInstall +qall)..."
     vim +PlugInstall +qall > /dev/null 2>&1
-    if command -v pipx > /dev/null 2&1; then
+    if command -v pipx > /dev/null 2>&1; then
         echo "Installing flake8 and bandit"
         pipx install bandit > /dev/null 2>&1
         pipx install flake8 > /dev/null 2>&1
