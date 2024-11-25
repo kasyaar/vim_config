@@ -7,10 +7,9 @@ let g:NERDTreeShowHidden = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeChDirMode = 3
-" Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 
 
 " Tagbar
@@ -19,11 +18,11 @@ vmap <Leader>t <esc>:TagbarToggle<cr>i
 imap <Leader>t <esc>:TagbarToggle<cr>i
 
 " RainbowParentheses
+nmap <Leader>rp :RainbowParenthesesToggleAll<cr>
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 au VimEnter * RainbowParenthesesToggle
-nmap <Leader>rp :RainbowParenthesesToggleAll<cr>
 let g:rbpt_colorpairs = [
             \ ['brown',       'LightGreen'],
             \ ['Darkblue',    'orange'],

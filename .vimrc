@@ -48,11 +48,11 @@ source $HOME/.vim/base.vim
 
 " EXTRA PLUGINS
 if !exists('$VIM_BASE')
+    source $HOME/.vim/extra.vim
+    source $HOME/.vim/neovide.vim
 endif
 
 " old config
-"source $HOME/.vim/undotree.vim
-"source $HOME/.vim/neovide.vim
 "source $HOME/.vim/check.vim
 "source $HOME/.vim/coc.vim
 "jedi
@@ -61,6 +61,3 @@ endif
 "if has("nvim")
 "    luafile $HOME/.vim/gen.lua
 "endif
-
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#formatter = 'unique_tail_improved'

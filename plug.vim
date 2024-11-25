@@ -1,14 +1,11 @@
 call plug#begin('~/.vim/plugged')
 Plug 'jlanzarotta/bufexplorer'
-"Plug 'preservim/nerdtree', {'tag': '6.10.11'}
 Plug 'preservim/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'preservim/nerdcommenter'
 Plug 'vim-syntastic/syntastic'
 Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesLoadRound'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
-Plug 'flazz/vim-colorschemes'
-Plug 'andreypopp/vim-colors-plain'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
@@ -16,6 +13,8 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive', {'on': 'G'}
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 if !exists('$VIM_BASE')
+    Plug 'flazz/vim-colorschemes', {'on': 'colo'}
+    Plug 'andreypopp/vim-colors-plain'
     Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
     Plug 'vimwiki/vimwiki'
     Plug 'vim-airline/vim-airline'
