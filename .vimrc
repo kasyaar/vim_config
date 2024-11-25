@@ -55,6 +55,7 @@ source $HOME/.vim/base.vim
 if !exists('$VIM_BASE')
     source $HOME/.vim/extra.vim
     source $HOME/.vim/neovide.vim
+    source $HOME/.vim/coc.vim
 endif
 
 " old config

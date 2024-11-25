@@ -21,6 +21,8 @@ if !exists('$VIM_BASE')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'chrisbra/csv.vim'
     Plug 'tpope/vim-dadbod'
+
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 "Plug 'David-Kunz/gen.nvim'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
