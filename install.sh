@@ -24,8 +24,6 @@ commands="vim git"
 # node npm pipx
 if [ -z "$VIM_BASE" ]; then
     commands="$commands node npm pipx"
-else
-    export VIM_BASE=true
 fi
 set -- $commands
 for command; do
@@ -46,15 +44,21 @@ git clone https://github.com/kasyaar/vim_config.git ~/.vim > /dev/null 2>&1
 ln -sf ~/.vim/.vimrc ~/ > /dev/null 2>&1
 #ln -sf ~/.vim/.gvimrc ~/ > /dev/null 2>&1
 
-NVIM_CONFIG_PATH=$HOME/.config/nvim
-mkdir -p $NVIM_CONFIG_PATH > /dev/null 2>&1
-cp $HOME/.vim/init.vim.example $NVIM_CONFIG_PATH/init.vim
-cp $HOME/.vim/coc-settings.json $NVIM_CONFIG_PATH/
-echo "Installing vim plugins(vim +PlugInstall +qall)..."
-vim +PlugInstall # +qall > /dev/null 2>&1
-if command -v pipx > /dev/null 2&1; then
-    echo "Installing flake8 and bandit"
-    pipx install bandit > /dev/null 2>&1
-    pipx install flake8 > /dev/null 2>&1
+if [ -z "$VIM_BASE" ]; then
+    NVIM_CONFIG_PATH=$HOME/.config/nvim
+    mkdir -p $NVIM_CONFIG_PATH > /dev/null 2>&1
+    cp $HOME/.vim/init.vim.example $NVIM_CONFIG_PATH/init.vim
+    cp $HOME/.vim/coc-settings.json $NVIM_CONFIG_PATH/
+    echo "Installing vim plugins(vim +PlugInstall +qall)..."
+    vim +PlugInstall # +qall > /dev/null 2>&1
+    if command -v pipx > /dev/null 2&1; then
+        echo "Installing flake8 and bandit"
+        pipx install bandit > /dev/null 2>&1
+        pipx install flake8 > /dev/null 2>&1
+    fi
+else
+    export VIM_BASE=true
+    echo "Installing vim plugins(vim +PlugInstall +qall)..."
+    vim +PlugInstall # +qall > /dev/null 2>&1
 fi
 echo "Installation finished."
