@@ -50,7 +50,7 @@ if [ -z "$VIM_BASE" ]; then
     cp $HOME/.vim/init.vim.example $NVIM_CONFIG_PATH/init.vim
     cp $HOME/.vim/coc-settings.json $NVIM_CONFIG_PATH/
     echo "Installing vim plugins(vim +PlugInstall +qall)..."
-    vim +PlugInstall # +qall > /dev/null 2>&1
+    vim +PlugInstall +qall > /dev/null 2>&1
     if command -v pipx > /dev/null 2&1; then
         echo "Installing flake8 and bandit"
         pipx install bandit > /dev/null 2>&1
@@ -59,6 +59,6 @@ if [ -z "$VIM_BASE" ]; then
 else
     export VIM_BASE=true
     echo "Installing vim plugins(vim +PlugInstall +qall)..."
-    vim +PlugInstall # +qall > /dev/null 2>&1
+    vim +PlugInstall +qall > /dev/null 2>&1
 fi
 echo "Installation finished."
