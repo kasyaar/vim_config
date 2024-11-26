@@ -1,4 +1,5 @@
 let g:coc_global_extensions = [
+            \'coc-git',
             \'coc-pyright'
             \]
 "let g:coc_global_extensions = [
