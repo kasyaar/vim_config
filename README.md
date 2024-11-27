@@ -38,7 +38,6 @@ Following plugins will be installed after apply this vim config:
 | Plugin                                                                    | Description                                 |
 |---------------------------------------------------------------------------|---------------------------------------------|
 | [rainbow_parentheses.vim](http://github.com/kien/rainbow_parentheses.vim) | helpful when you work with clojure          |
-| [syntastic](http://github.com/kasyaar/syntastic)                          | syntax checker for many languages           |
 | [bufexplorer](https://github.com/jlanzarotta/bufexplorer)                 | make buffer management much easier          |
 | [vim-snippets](http://github.com/honza/vim-snippets)                      | a bunch of snippets for different languages |
 | [nerdtree](http://github.com/scrooloose/nerdtree)                         | project tree                                |

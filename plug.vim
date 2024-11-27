@@ -2,7 +2,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'jlanzarotta/bufexplorer'
 Plug 'preservim/nerdtree', {'on': 'NERDTreeToggle', 'tag': '7.0.0'}
 Plug 'preservim/nerdcommenter'
-Plug 'vim-syntastic/syntastic'
 Plug 'kien/rainbow_parentheses.vim', {'on': 'RainbowParenthesesLoadRound'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
@@ -26,7 +25,7 @@ if !exists('$VIM_BASE')
 endif
 "Plug 'David-Kunz/gen.nvim'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 "Plug 'williamboman/mason.nvim'
 "Plug 'huggingface/llm.nvim'
 call plug#end()
