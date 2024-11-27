@@ -60,7 +60,6 @@ endif
 
 " old config
 "source $HOME/.vim/check.vim
-"source $HOME/.vim/coc.vim
 "jedi
 "let g:jedi#popup_on_dot = 0
 "gen.nvim
