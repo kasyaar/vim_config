@@ -22,10 +22,10 @@ if !exists('$VIM_BASE')
     Plug 'tpope/vim-dadbod'
 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 endif
 "Plug 'David-Kunz/gen.nvim'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 "Plug 'williamboman/mason.nvim'
 "Plug 'huggingface/llm.nvim'
 call plug#end()
