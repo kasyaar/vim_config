@@ -14,12 +14,11 @@ set smartindent
 set hidden
 syntax on
 set spelllang=en
-set spell
 augroup noSpell
     autocmd!
     autocmd FileType nerdtree,toggleterm setlocal nospell
 augroup END
-set spell
+set nospell
 "set termencoding=utf8
 set fileencodings=utf8
 set encoding=utf8
@@ -52,6 +51,8 @@ source $HOME/.vim/base.vim
 
 
 " EXTRA PLUGINS
+" " Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
 if !exists('$VIM_BASE')
     source $HOME/.vim/extra.vim
     source $HOME/.vim/neovide.vim
