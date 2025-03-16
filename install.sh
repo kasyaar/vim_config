@@ -55,6 +55,7 @@ if [ -z "$VIM_BASE" ]; then
         echo "Installing flake8 and bandit"
         pipx install bandit > /dev/null 2>&1
         pipx install flake8 > /dev/null 2>&1
+        pipx install autopep8 > /dev/null 2>&1
     fi
 else
     export VIM_BASE=true
