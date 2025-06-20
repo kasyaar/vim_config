@@ -20,6 +20,7 @@ if !exists('$VIM_BASE')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'chrisbra/csv.vim'
     Plug 'tpope/vim-dadbod'
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
