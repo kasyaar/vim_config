@@ -1,4 +1,9 @@
 colo monochrome
+if has('nvim')
+    "lua require("toggleterm").setup()
+    "nmap <F4> :ToggleTerm<CR>
+    "nmap <C-F4> :ToggleTerm direction=float<CR>
+endif
 " NERDTree
 nmap <Leader>p :NERDTreeToggle<cr>
 vmap <Leader>p <esc>:NERDTreeToggle<cr>i
