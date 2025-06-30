@@ -1,3 +1,4 @@
+colo monochrome
 " NERDTree
 nmap <Leader>p :NERDTreeToggle<cr>
 vmap <Leader>p <esc>:NERDTreeToggle<cr>i
