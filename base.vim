@@ -1,4 +1,4 @@
-colo monochrome
+"colo monochrome
 if has('nvim')
     "lua require("toggleterm").setup()
     "nmap <F4> :ToggleTerm<CR>
