@@ -4,7 +4,7 @@ require("gen").setup({
     quit_map = "q",
     retry_map = "<c-r>",
     accept_map = "<c-cr>",
-    host = "ge66",
+    host = "msi",
     port = "11434",
     --display_mode = "float",
     display_mode = "horizontal-split",

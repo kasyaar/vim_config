@@ -24,6 +24,7 @@ if !exists('$VIM_BASE')
 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
+    Plug 'David-Kunz/gen.nvim'
 endif
 "Plug 'David-Kunz/gen.nvim'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
