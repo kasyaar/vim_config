@@ -88,3 +88,12 @@ let g:snips_author = ''
 
 " Fugitive
 nmap <Leader>g :G<CR>
+
+let g:markdown_fenced_languages = [
+            \'sh',
+            \'go',
+            \'python',
+            \'javascript',
+            \'rust',
+            \'json',
+            \]
