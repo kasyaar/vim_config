@@ -59,6 +59,12 @@ if !exists('$VIM_BASE')
     source $HOME/.vim/coc.vim
 endif
 
+if !has('gui_running')
+    try
+        colo monochrome
+    endtry
+endif
+
 " old config
 "source $HOME/.vim/check.vim
 "jedi
