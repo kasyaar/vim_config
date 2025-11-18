@@ -50,7 +50,6 @@ if [ -z "$VIM_BASE" ]; then
     mkdir -p $NVIM_CONFIG_PATH > /dev/null 2>&1
     cp $HOME/.vim/init.vim.example $NVIM_CONFIG_PATH/init.vim
     cp $HOME/.vim/coc-settings.json $NVIM_CONFIG_PATH/
-    echo "Installing vim plugins(vim +PlugInstall +qall)..."
     if command -v "uv" > /dev/null 2>&1; then
         echo "Installing flake8 and bandit"
         uv tool install bandit > /dev/null 2>&1
@@ -60,6 +59,7 @@ if [ -z "$VIM_BASE" ]; then
         #pipx install flake8 > /dev/null 2>&1
         #pipx install autopep8 > /dev/null 2>&1
     fi
+    echo "Installing vim plugins(vim +PlugInstall +qall)..."
     vim +PlugInstall +qall > /dev/null 2>&1
 else
     export VIM_BASE=true
