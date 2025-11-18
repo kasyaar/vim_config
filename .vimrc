@@ -61,7 +61,9 @@ endif
 
 if !has('gui_running')
     try
-        colo monochrome
+        if filereadable(expand('$VIMRUNTIME/plugged/vim-colorschemes/colors/monochrome.vim'))
+            colo monochrome
+        endif
     endtry
 endif
 
