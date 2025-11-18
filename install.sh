@@ -23,7 +23,8 @@ missing=""
 commands="vim git" 
 # node npm pipx
 if [ -z "$VIM_BASE" ]; then
-    commands="$commands node npm pipx"
+    #commands="$commands node npm pipx"
+    commands="$commands node npm uv"
 fi
 set -- $commands
 for command; do
@@ -53,9 +54,12 @@ if [ -z "$VIM_BASE" ]; then
     vim +PlugInstall +qall > /dev/null 2>&1
     if command -v "pipx" > /dev/null 2>&1; then
         echo "Installing flake8 and bandit"
-        pipx install bandit > /dev/null 2>&1
-        pipx install flake8 > /dev/null 2>&1
-        pipx install autopep8 > /dev/null 2>&1
+        uv tool install bandit > /dev/null 2>&1
+        uv tool install fake8 > /dev/null 2>&1
+        uv tool install autopep8 > /dev/null 2>&1
+        #pipx install bandit > /dev/null 2>&1
+        #pipx install flake8 > /dev/null 2>&1
+        #pipx install autopep8 > /dev/null 2>&1
     fi
 else
     export VIM_BASE=true
