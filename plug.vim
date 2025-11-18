@@ -25,6 +25,27 @@ if !exists('$VIM_BASE')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
     Plug 'David-Kunz/gen.nvim'
+
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'olimorris/codecompanion.nvim'
+
+    " AVANTE START
+    " Deps
+    "Plug 'nvim-lua/plenary.nvim'
+    Plug 'MunifTanjim/nui.nvim'
+    Plug 'MeanderingProgrammer/render-markdown.nvim'
+
+    " Optional deps
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'nvim-tree/nvim-web-devicons' "or Plug 'echasnovski/mini.icons'
+    Plug 'HakonHarnes/img-clip.nvim'
+    Plug 'zbirenbaum/copilot.lua'
+    Plug 'stevearc/dressing.nvim' " for enhanced input UI
+    Plug 'folke/snacks.nvim' " for modern input UI
+
+    " Yay, pass source=true if you want to build from source
+    Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+    "AVANTE END
 endif
 "Plug 'David-Kunz/gen.nvim'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}

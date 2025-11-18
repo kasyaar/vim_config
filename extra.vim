@@ -4,4 +4,6 @@ autocmd BufRead,BufNewFile gen.nvim setlocal foldmethod=manual
 "gen.nvim
 if has("nvim")
     luafile $HOME/.vim/gen.lua
+    luafile $HOME/.vim/codecompanion.lua
+    luafile $HOME/.vim/avante.lua
 endif
