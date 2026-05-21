@@ -89,6 +89,9 @@ let g:snips_author = ''
 " Fugitive
 nmap <Leader>g :G<CR>
 
+" Substitute word under cursor globally
+nnoremap <Leader>s :%s/<C-R><C-W>//g<Left><Left>
+
 let g:markdown_fenced_languages = [
             \'sh',
             \'go',
